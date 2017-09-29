@@ -1,6 +1,15 @@
-<h2>Home</h2>
-
-<a href="/auth/signup">Signup</a>
-<a href="/auth/login">Login</a>
-<a href="/auth/logout">Logout</a>
-<a href="/profile">Profile</a>
+<input type="text" name="inputImage" id="inputImage" value="https://upload.wikimedia.org/wikipedia/commons/c/c3/RH_Louise_Lillian_Gish.jpg" />
+<button class="btn-group btn-group-lg" onclick="processImage()">Submit</button>
+<br><br>
+<div id="wrapper">
+    <div id="jsonOutput">
+        Response:
+        <br><br>
+        <textarea id="responseTextArea" class="UIInput"></textarea>
+    </div>
+    <div id="imageDiv">
+        Source image:
+        <br><br>
+        <img id="sourceImage" />
+    </div>
+</div>

@@ -3,20 +3,32 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Authentication</title>
-
-    <!-- Latest compiled and minified CSS & JS -->
+    <title>Facial Recognition</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <link rel="stylesheet" href="/css/style.css">
   </head>
   <body>
+    <nav class="navbar navbar-default">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <a class="navbar-text navbar-left" href="/">Home</a>
+          <a class="navbar-text navbar-left" href="/auth/signup">Signup</a>
+          <a class="navbar-text navbar-left" href="/auth/login">Login</a>
+          <a class="navbar-text navbar-left" href="/auth/logout">Logout</a>
+          <a class="navbar-text navbar-left" href="/profile">Profile</a>
+          <p class="navbar-text navbar-right">Signed in as <a href="/profile" class="navbar-link"><%=currentUser%></a></p>
+        </div>
+      </div>
+    </nav>
     <div class="container">
-      <h1>Authentication</h1>
+
       <%- body %>
       <%- JSON.stringify(currentUser) %>
       <% include partials/alerts %>
     </div>
 
-    <script src="//code.jquery.com/jquery.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="/js/index.js"></script>
   </body>
 </html>
