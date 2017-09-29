@@ -14,17 +14,7 @@ app.use(require('morgan')('dev'));
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(ejsLayouts);
 app.use(express.static(__dirname + '/public'));
-/*
- * setup the session with the following:
- *
- * secret: A string used to "sign" the session ID cookie, which makes it unique
- * from application to application. We'll hide this in the environment
- *
- * resave: Save the session even if it wasn't modified. We'll set this to false
- *
- * saveUninitialized: If a session is new, but hasn't been changed, save it.
- * We'll set this to true.
- */
+
 app.use(session({
   secret: process.env.SESSION_SECRET,
   resave: false,
