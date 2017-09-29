@@ -1,16 +1,16 @@
 {
   "development": {
-    "database": "auth-boilerplate",
+    "database": "faceExpressAuth",
     "host": "127.0.0.1",
     "dialect": "postgres"
   },
   "test": {
-    "database": "auth-boilerplate",
+    "database": "faceExpressAuth",
     "host": "127.0.0.1",
     "dialect": "postgres"
   },
   "production": {
-    "database": "auth-boilerplate",
+    "database": "faceExpressAuth",
     "host": "127.0.0.1",
     "dialect": "postgres"
   }
