@@ -3,6 +3,11 @@ var db = require('../models');
 var passport = require('../config/ppConfig');
 var router = express.Router();
 
+
+router.get('/signup', function(req, res) {
+  res.render('auth/signup');
+});
+
 router.post('/signup', function(req, res) {
   console.log(req.body.email);
   db.user.findOrCreate({
@@ -26,15 +31,19 @@ router.post('/signup', function(req, res) {
   }).catch(function(error) {
     // FLASH
     req.flash('error', error.message);
-    res.redirect('/');
+    res.redirect('/auth/signup');
   });
+});
+
+router.get('/login', function(req, res) {
+  res.render('auth/login');
 });
 
 
 // FLASH
 router.post('/login', passport.authenticate('local', {
   successRedirect: '/',
-  failureRedirect: '/',
+  failureRedirect: '/auth/login',
   failureFlash: 'Invalid username and/or password',
   successFlash: 'You have logged in'
 }));
