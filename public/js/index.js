@@ -21,10 +21,8 @@ function processImage() {
             data: '{"url": ' + '"' + sourceImageUrl + '"}',
         })
         .done(function(data) {
-            // Show formatted JSON on webpage.
-            $("#responseTextArea").val(JSON.stringify(data, null, 2));
+          //build emotion radar chart
             var newData = data[0].faceAttributes.emotion;
-            //build emotion radar chart
             var ctx = document.getElementById("emotionChart").getContext('2d');
             var myRadarChart = new Chart(ctx, {
                 type: 'radar',
@@ -49,7 +47,29 @@ function processImage() {
                   }
                 }
             });
-        })
+            var hairData = data[0].faceAttributes.hair.hairColor;
+            var ctx1 = document.getElementById("hairChart").getContext('2d');
+            var myHairChart = new Chart(ctx1, {
+              type: 'horizontalBar',
+              data: {
+                labels: ["Brown", "Black", "Other", "Blond", "Red", "Grey"],
+                datasets: [
+                  {
+                  label: "Confidence",
+                  backgroundColor: ["#3e95cd", "#8e5ea2","#3cba9f","#e8c3b9","#c45850"],
+                  data: [hairData[0].confidence, hairData[1].confidence, hairData[2].confidence, hairData[3].confidence, hairData[4].confidence, hairData[5].confidence]
+                  }
+                ]
+              },
+            options: {
+              legend: { display: false },
+              title: {
+                display: true,
+                text: 'Hair Color'
+              }
+            }
+          });
+            })
         .fail(function(jqXHR, textStatus, errorThrown) {
             // Display error message.
             var errorString = (errorThrown === "") ? "Error. " : errorThrown + " (" + jqXHR.status + "): ";
