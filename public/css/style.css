@@ -1,51 +1,38 @@
-#wrapper{
-  display: table;
+/*Loading spinner*/
+#loading_wrap{
+  position:fixed;
+  height:100%;
+  width:100%;
+  overflow:hidden;
+  top:0;
+  left:0;
+  background: #F2C777;
+}
+/*http://tobiasahlin.com/spinkit/*/
+.spinner {
+  width: 40px;
+  height: 40px;
+  background-color: #333;
+  margin: 100px auto;
+  -webkit-animation: sk-rotateplane 1.2s infinite ease-in-out;
+  animation: sk-rotateplane 1.2s infinite ease-in-out;
 }
 
-#jsonOutput{
-  width: 600px;
-  display: table-cell;
+@-webkit-keyframes sk-rotateplane {
+  0% { -webkit-transform: perspective(120px) }
+  50% { -webkit-transform: perspective(120px) rotateY(180deg) }
+  100% { -webkit-transform: perspective(120px) rotateY(180deg)  rotateX(180deg) }
 }
 
-#responseTextArea{
-  width: 580px;
-  height: 400px;
-}
-
-#imageDiv{
-  width: 400px;
-  display: table-cell;
-}
-
-#sourceImage{
-  width: 400px;
-}
-
-#emotionChart{
-  height: 200px;
-  width: 200px;
-}
-
-.btn-file {
-    position: relative;
-    overflow: hidden;
-}
-.btn-file input[type=file] {
-    position: absolute;
-    top: 0;
-    right: 0;
-    min-width: 100%;
-    min-height: 100%;
-    font-size: 100px;
-    text-align: right;
-    filter: alpha(opacity=0);
-    opacity: 0;
-    outline: none;
-    background: white;
-    cursor: inherit;
-    display: block;
-}
-
-#img-upload{
-    width: 400px;
+@keyframes sk-rotateplane {
+  0% {
+    transform: perspective(120px) rotateX(0deg) rotateY(0deg);
+    -webkit-transform: perspective(120px) rotateX(0deg) rotateY(0deg)
+  } 50% {
+    transform: perspective(120px) rotateX(-180.1deg) rotateY(0deg);
+    -webkit-transform: perspective(120px) rotateX(-180.1deg) rotateY(0deg)
+  } 100% {
+    transform: perspective(120px) rotateX(-180deg) rotateY(-179.9deg);
+    -webkit-transform: perspective(120px) rotateX(-180deg) rotateY(-179.9deg);
+  }
 }

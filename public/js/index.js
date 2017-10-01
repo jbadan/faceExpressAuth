@@ -1,3 +1,7 @@
+$(document).ready(function(){
+  $('#loading_wrap').remove();
+});
+
 function processImage() {
         var subscriptionKey = '777602b32d52468babf62398a5630de4';
         var uriBase = "https://westcentralus.api.cognitive.microsoft.com/face/v1.0/detect";
