@@ -40,6 +40,7 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 var images = [];
+console.log(images);
 
 app.get('/', function(req, res) {
     res.render('index', {images, cloudinary});

@@ -30,17 +30,20 @@ function processImage() {
                   labels: ["Anger", "Contempt", "Disgust", "Fear", "Happiness", "Neutral", "Sadness", "Surprise"],
                   datasets: [
                     {
-                      label: "Emotions",
+                      label: "",
                       backgroundColor: "rgba(255,99,132,0.2)",
                       borderColor: "rgba(255,99,132,1)",
                       pointBorderColor: "#fff",
                       pointBackgroundColor: "rgba(255,99,132,1)",
                       pointBorderColor: "#fff",
-                      data: [newData.anger, newData.contempt, newData.disgust, newData.fear, newData.happiness, newData.neutral, newData.sadness, newData.surprise]
+                      data: [(newData.anger*100), (newData.contempt*100), (newData.disgust*100), (newData.fear*100), (newData.happiness*100), (newData.neutral*100), (newData.sadness*100), (newData.surprise*100)]
                     }
                   ]
                 },
                 options: {
+                  scales:{
+                    display: false
+                  },
                   title: {
                     display: true,
                     text: 'Distribution of Emotions'
@@ -56,7 +59,7 @@ function processImage() {
                 datasets: [
                   {
                   label: "Confidence",
-                  backgroundColor: ["#3e95cd", "#8e5ea2","#3cba9f","#e8c3b9","#c45850"],
+                  backgroundColor: ["#8b7355","#000000","#bf3eff","#ffb90f","#c45850", "#8a8a8a"],
                   data: [hairData[0].confidence, hairData[1].confidence, hairData[2].confidence, hairData[3].confidence, hairData[4].confidence, hairData[5].confidence]
                   }
                 ]
