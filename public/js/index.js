@@ -11,6 +11,20 @@ $('#authPassword, #confirmPassword').on('keyup', function () {
     $('#message').html('Passwords do not match').css('color', 'red');
 });
 
+$(function() {
+  $(":password").keyup(check_submit).each(function() {
+    check_submit();
+  });
+});
+
+function check_submit() {
+  if ($('#authPassword').val() != $('#confirmPassword').val()) {
+    $(":submit").attr("disabled", true);
+  } else {
+    $(":submit").removeAttr("disabled");
+  }
+}
+
 // send cloudinary url to api for facial recognition
 function processImage() {
         var subscriptionKey = '777602b32d52468babf62398a5630de4';
