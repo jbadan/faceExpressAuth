@@ -21,6 +21,10 @@
   width: 400px;
 }
 
+#emotionChart{
+  height: 200px;
+  width: 200px;
+}
 
 .btn-file {
     position: relative;

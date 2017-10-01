@@ -45,7 +45,7 @@ function processImage() {
                 options: {
                   title: {
                     display: true,
-                    text: 'Distribution in % of emotion'
+                    text: 'Distribution of Emotions'
                   }
                 }
             });
