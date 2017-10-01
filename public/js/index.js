@@ -1,7 +1,17 @@
+// loading screen
 $(document).ready(function(){
   $('#loading_wrap').remove();
 });
 
+// passwords matching on sign up
+$('#authPassword, #confirmPassword').on('keyup', function () {
+  if ($('#authPassword').val() == $('#confirmPassword').val()) {
+    $('#message').html('Passwords match').css('color', 'green');
+  } else
+    $('#message').html('Passwords do not match').css('color', 'red');
+});
+
+// send cloudinary url to api for facial recognition
 function processImage() {
         var subscriptionKey = '777602b32d52468babf62398a5630de4';
         var uriBase = "https://westcentralus.api.cognitive.microsoft.com/face/v1.0/detect";
