@@ -16,18 +16,3 @@
 	<input type="file" name="myFile">
 	<input type="submit" class="btn btn-primary">
 </form>
-<h2>Images</h2>
-<% images.forEach(function(image){ %>
-	<% var imgUrl = cloudinary.url(image, {width: 250, height: 250}); %>
-	<img id="inputImage" src="<%= imgUrl %>">
-<% }) %>
-
-
-<div id="wrapper">
-    <div id="jsonOutput">
-        <textarea id="responseTextArea" class="UIInput"></textarea>
-    </div>
-    <div id="imageDiv">
-        <img id="sourceImage" />
-    </div>
-</div>

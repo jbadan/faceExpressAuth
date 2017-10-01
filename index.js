@@ -42,33 +42,14 @@ app.use(passport.session());
 var images = [];
 
 app.get('/', function(req, res) {
-  // var apiUrl = 'https://westcentralus.api.cognitive.microsoft.com/face/v1.0/detect';
-  // var apiKey = '777602b32d52468babf62398a5630de4';
-  // var params = {
-  //     "returnFaceId": "true",
-  //     "returnFaceLandmarks": "false",
-  //     "returnFaceAttributes": "age,gender,headPose,smile,facialHair,glasses,emotion,hair,makeup,occlusion,accessories,blur,exposure,noise",
-  // };
-  // request({
-  //   url: apiUrl,
-  //   qs:{
-  //     api_key: apiKey,
-  //     query: params
-  //   }
-  // }, function(error, response, body){
-  //   var face = JSON.parse(body);
-  //   console.log(face);
     res.render('index', {images, cloudinary});
-  // })
 });
 
 app.post('/', upload.single('myFile'), function(req,res){
 	cloudinary.uploader.upload(req.file.path,function(result){
 		images.push(result.public_id);
-		res.redirect('/');
+		res.render('display', {images, cloudinary});
 	});
-	// res.send(req.file);
-
 });
 
 app.get('/profile', isLoggedIn, function(req, res) {
