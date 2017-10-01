@@ -35,6 +35,8 @@
     "passport-local": "^1.0.0",
     "pg": "^6.4.1",
     "pg-hstore": "^2.3.2",
+    "request": "^2.83.0",
+    "rowdy-logger": "^1.0.0",
     "sequelize": "^3.30.4"
   }
 }

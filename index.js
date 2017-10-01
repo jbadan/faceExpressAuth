@@ -2,6 +2,7 @@ require('dotenv').config();
 var express = require('express');
 var ejsLayouts = require('express-ejs-layouts');
 var bodyParser = require('body-parser');
+var request = require('request');
 var app = express();
 
 var session = require('express-session');
@@ -37,7 +38,24 @@ app.use(passport.session());
 
 
 app.get('/', function(req, res) {
-  res.render('index');
+  // var apiUrl = 'https://westcentralus.api.cognitive.microsoft.com/face/v1.0/detect';
+  // var apiKey = '777602b32d52468babf62398a5630de4';
+  // var params = {
+  //     "returnFaceId": "true",
+  //     "returnFaceLandmarks": "false",
+  //     "returnFaceAttributes": "age,gender,headPose,smile,facialHair,glasses,emotion,hair,makeup,occlusion,accessories,blur,exposure,noise",
+  // };
+  // request({
+  //   url: apiUrl,
+  //   qs:{
+  //     api_key: apiKey,
+  //     query: params
+  //   }
+  // }, function(error, response, body){
+  //   var face = JSON.parse(body);
+  //   console.log(face);
+    res.render('index');
+  // })
 });
 
 app.get('/profile', isLoggedIn, function(req, res) {
@@ -45,6 +63,7 @@ app.get('/profile', isLoggedIn, function(req, res) {
 });
 
 app.use('/auth', require('./controllers/auth'));
+
 
 var server = app.listen(process.env.PORT || 3000);
 

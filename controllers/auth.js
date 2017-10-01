@@ -3,11 +3,8 @@ var db = require('../models');
 var passport = require('../config/ppConfig');
 var router = express.Router();
 
-router.get('/signup', function(req, res) {
-  res.render('auth/signup');
-});
-
 router.post('/signup', function(req, res) {
+  console.log(req.body.email);
   db.user.findOrCreate({
     where: { email: req.body.email },
     defaults: {
@@ -24,23 +21,20 @@ router.post('/signup', function(req, res) {
     } else {
       // FLASH
       req.flash('error', 'Email already exists');
-      res.redirect('/auth/signup');
+      res.redirect('/');
     }
   }).catch(function(error) {
     // FLASH
     req.flash('error', error.message);
-    res.redirect('/auth/signup');
+    res.redirect('/');
   });
 });
 
-router.get('/login', function(req, res) {
-  res.render('auth/login');
-});
 
 // FLASH
 router.post('/login', passport.authenticate('local', {
   successRedirect: '/',
-  failureRedirect: '/auth/login',
+  failureRedirect: '/',
   failureFlash: 'Invalid username and/or password',
   successFlash: 'You have logged in'
 }));
