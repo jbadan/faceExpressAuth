@@ -1,6 +1,21 @@
 <input type="text" name="inputImage" id="inputImage" value="https://upload.wikimedia.org/wikipedia/commons/c/c3/RH_Louise_Lillian_Gish.jpg" />
 <button class="btn-group btn-group-lg" onclick="processImage()">Submit</button>
 <br><br>
+
+<div class="form-group">
+  <label>Upload Image</label>
+  <div class="input-group">
+    <span class="input-group-btn">
+      <span class="btn btn-default btn-file">
+          Browse… <input type="file" id="imgInp">
+      </span>
+    </span>
+    <input type="text" class="form-control" readonly>
+  </div>
+  <img id='img-upload'/>
+</div>
+
+
 <div id="wrapper">
     <div id="jsonOutput">
         <textarea id="responseTextArea" class="UIInput"></textarea>
