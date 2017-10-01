@@ -1,6 +1,9 @@
 require('dotenv').config();
 var express = require('express');
 var ejsLayouts = require('express-ejs-layouts');
+var multer = require('multer');
+var cloudinary = require('cloudinary');
+var upload = multer({dest: './uploads/'});
 var bodyParser = require('body-parser');
 var request = require('request');
 var app = express();
@@ -36,6 +39,7 @@ var passport = require('./config/ppConfig');
 app.use(passport.initialize());
 app.use(passport.session());
 
+var images = [];
 
 app.get('/', function(req, res) {
   // var apiUrl = 'https://westcentralus.api.cognitive.microsoft.com/face/v1.0/detect';
@@ -54,8 +58,17 @@ app.get('/', function(req, res) {
   // }, function(error, response, body){
   //   var face = JSON.parse(body);
   //   console.log(face);
-    res.render('index');
+    res.render('index', {images, cloudinary});
   // })
+});
+
+app.post('/', upload.single('myFile'), function(req,res){
+	cloudinary.uploader.upload(req.file.path,function(result){
+		images.push(result.public_id);
+		res.redirect('/');
+	});
+	// res.send(req.file);
+
 });
 
 app.get('/profile', isLoggedIn, function(req, res) {
