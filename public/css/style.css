@@ -1,3 +1,12 @@
+@font-face {
+    font-family: 'Montserrat';
+    src: url(img/Montserrat-Regular.ttf);
+}
+@font-face {
+    font-family: 'Cardo';
+    src: url(img/Cardo-Regular.ttf);
+}
+
 /*Loading spinner*/
 #loading_wrap{
   position:fixed;
@@ -35,4 +44,11 @@
     transform: perspective(120px) rotateX(-180deg) rotateY(-179.9deg);
     -webkit-transform: perspective(120px) rotateX(-180deg) rotateY(-179.9deg);
   }
+}
+
+body{
+  font-family: 'Cardo';
+}
+h1{
+  font-family: 'Montserrat'
 }
