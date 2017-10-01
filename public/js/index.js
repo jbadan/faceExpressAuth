@@ -64,6 +64,7 @@ function processImage() {
                   }
                 }
             });
+            // build hair data chart
             var hairData = data[0].faceAttributes.hair.hairColor;
             var ctx1 = document.getElementById("hairChart").getContext('2d');
             var myHairChart = new Chart(ctx1, {

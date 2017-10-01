@@ -9,7 +9,10 @@
   <img id="inputImage" src="<%= imgUrl %>">
 <% }) %>
 <button onclick="processImage()">Render charts</button>
+<div class="chart-container" style="position: relative; height:40vh; width:80vw">
+    <canvas id="emotionChart"></canvas>
+</div>
 
-
-<canvas id="emotionChart" width="300" height="200"></canvas>
-<canvas id="hairChart" width="300" height="450"></canvas>
+<div class="chart-container" style="position: relative; height:40vh; width:80vw">
+    <canvas id="hairChart"></canvas>
+</div>
