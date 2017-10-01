@@ -23,6 +23,32 @@ function processImage() {
         .done(function(data) {
             // Show formatted JSON on webpage.
             $("#responseTextArea").val(JSON.stringify(data, null, 2));
+            var newData = data[0].faceAttributes.emotion;
+            //build emotion radar chart
+            var ctx = document.getElementById("emotionChart").getContext('2d');
+            var myRadarChart = new Chart(ctx, {
+                type: 'radar',
+                data: {
+                  labels: ["Anger", "Contempt", "Disgust", "Fear", "Happiness", "Neutral", "Sadness", "Surprise"],
+                  datasets: [
+                    {
+                      label: "Emotions",
+                      backgroundColor: "rgba(255,99,132,0.2)",
+                      borderColor: "rgba(255,99,132,1)",
+                      pointBorderColor: "#fff",
+                      pointBackgroundColor: "rgba(255,99,132,1)",
+                      pointBorderColor: "#fff",
+                      data: [newData.anger, newData.contempt, newData.disgust, newData.fear, newData.happiness, newData.neutral, newData.sadness, newData.surprise]
+                    }
+                  ]
+                },
+                options: {
+                  title: {
+                    display: true,
+                    text: 'Distribution in % of emotion'
+                  }
+                }
+            });
         })
         .fail(function(jqXHR, textStatus, errorThrown) {
             // Display error message.
