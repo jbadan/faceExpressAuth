@@ -54,12 +54,8 @@ function processImage() {
             data: '{"url": ' + '"' + sourceImageUrl + '"}',
         })
         .done(function(data) {
-          // $('#renderCharts').toggle();
-          // $('#header').toggle();
           $('#jumbotron').toggle();
           $('.imageCharts').show();
-          // $('#inputImage').height('200px');
-          //build emotion radar chart
             var newData = data[0].faceAttributes.emotion;
             var ctx = document.getElementById("emotionChart").getContext('2d');
             var myRadarChart = new Chart(ctx, {
@@ -74,7 +70,7 @@ function processImage() {
                       pointBorderColor: "#fff",
                       pointBackgroundColor: "rgba(255,99,132,1)",
                       pointBorderColor: "#fff",
-                      data: [(newData.anger*100), (newData.contempt*100), (newData.disgust*100), (newData.fear*100), (newData.happiness*100), (newData.neutral*100), (newData.sadness*100), (newData.surprise*100)]
+                      data: [newData.anger, newData.contempt, newData.disgust, newData.fear, newData.happiness, newData.neutral, newData.sadness, newData.surprise]
                     }
                   ]
                 },
@@ -113,7 +109,6 @@ function processImage() {
           });
         })
         .fail(function(jqXHR, textStatus, errorThrown) {
-            // Display error message.
             var errorString = (errorThrown === "") ? "Error. " : errorThrown + " (" + jqXHR.status + "): ";
             errorString += (jqXHR.responseText === "") ? "" : (jQuery.parseJSON(jqXHR.responseText).message) ?
                 jQuery.parseJSON(jqXHR.responseText).message : jQuery.parseJSON(jqXHR.responseText).error.message;
