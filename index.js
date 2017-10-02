@@ -48,9 +48,15 @@ app.post('/', upload.single('myFile'), function(req,res){
     images = [];
 		images.push(result.public_id);
     //add if logged in - find userId then add cloudinary url to cloudinary model
-
-		res.render('display', {images, cloudinary});
-	});
+	   if(req.currentUser){
+		     db.user.findById(req.currentUser.id).then(function(user) {
+           user.createCloudinary({
+             src: result.public_id
+           }).then(function(){})
+	       });
+      }
+  res.render('display', {images, cloudinary});
+  });
 });
 
 app.get('/profile', isLoggedIn, function(req, res) {
@@ -58,6 +64,7 @@ app.get('/profile', isLoggedIn, function(req, res) {
 });
 
 app.use('/auth', require('./controllers/auth'));
+app.use('/profile', require('./controllers/profile'));
 
 
 var server = app.listen(process.env.PORT || 3000);
