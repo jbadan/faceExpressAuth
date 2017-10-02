@@ -65,11 +65,18 @@ h1{
   text-align: center;
 }
 
-img {
-    display: block;
+#inputImage {
     margin: auto;
 }
 
+#image{
+  border: 10px solid white;
+}
+
+.imageCharts{
+  display: flex;
+  align-items: center;
+}
 #myCarousel{
   border-radius: 5px;
   margin: 20px;
@@ -89,4 +96,13 @@ img {
 .chart-container{
   background: white;
   padding: 40px;
+}
+
+#addMore{
+  text-align: center;
+  color: white;
+}
+input[type=file] {
+  margin: 0 auto;
+  padding: 2px;
 }

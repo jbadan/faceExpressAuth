@@ -26,7 +26,7 @@ function check_submit() {
 }
 
 $(function() {
-    $('#myCarousel').hide();
+    $('.imageCharts').hide();
 });
 
 
@@ -54,9 +54,11 @@ function processImage() {
             data: '{"url": ' + '"' + sourceImageUrl + '"}',
         })
         .done(function(data) {
-          $('#renderCharts').toggle();
-          $('#header').toggle();
-          $('#myCarousel').show();
+          // $('#renderCharts').toggle();
+          // $('#header').toggle();
+          $('#jumbotron').toggle();
+          $('.imageCharts').show();
+          // $('#inputImage').height('200px');
           //build emotion radar chart
             var newData = data[0].faceAttributes.emotion;
             var ctx = document.getElementById("emotionChart").getContext('2d');
