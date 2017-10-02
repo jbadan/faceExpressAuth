@@ -1,12 +1,14 @@
+*{
+  margin: 0;
+}
 @font-face {
     font-family: 'Montserrat';
-    src: url(img/Montserrat-Regular.ttf);
+    src: url(../img/Montserrat-Regular.ttf);
 }
 @font-face {
     font-family: 'Cardo';
-    src: url(img/Cardo-Regular.ttf);
+    src: url(../img/Cardo-Regular.ttf);
 }
-
 /*Loading spinner*/
 #loading_wrap{
   position:fixed;
@@ -28,13 +30,11 @@
   -webkit-animation: sk-rotateplane 1.2s infinite ease-in-out;
   animation: sk-rotateplane 1.2s infinite ease-in-out;
 }
-
 @-webkit-keyframes sk-rotateplane {
   0% { -webkit-transform: perspective(120px) }
   50% { -webkit-transform: perspective(120px) rotateY(180deg) }
   100% { -webkit-transform: perspective(120px) rotateY(180deg)  rotateX(180deg) }
 }
-
 @keyframes sk-rotateplane {
   0% {
     transform: perspective(120px) rotateX(0deg) rotateY(0deg);
@@ -47,15 +47,46 @@
     -webkit-transform: perspective(120px) rotateX(-180deg) rotateY(-179.9deg);
   }
 }
-
 body{
   font-family: 'Cardo';
+  width: 100%;
+  margin: 0%;
+  background: #F24738;
 }
 h1{
   font-family: 'Montserrat'
   color: #024959;
 }
-
 .navbar{
-  background: #F24738;
+  background: white;
+}
+.jumbotron{
+  background: white;
+  text-align: center;
+}
+
+img {
+    display: block;
+    margin: auto;
+}
+
+#myCarousel{
+  border-radius: 5px;
+  margin: 20px;
+  padding: 20px;
+}
+.carousel-control.left, .carousel-control.right {
+    background-image: none
+}
+
+.carousel-indicators li {
+    background: #F2C777;
+}
+.carousel-indicators .active {
+    background: #666;
+}
+
+.chart-container{
+  background: white;
+  padding: 40px;
 }

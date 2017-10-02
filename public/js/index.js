@@ -25,6 +25,11 @@ function check_submit() {
   }
 }
 
+$(function() {
+    $('#myCarousel').hide();
+});
+
+
 // send cloudinary url to api for facial recognition
 function processImage() {
         var subscriptionKey = '777602b32d52468babf62398a5630de4';
@@ -49,6 +54,9 @@ function processImage() {
             data: '{"url": ' + '"' + sourceImageUrl + '"}',
         })
         .done(function(data) {
+          $('#renderCharts').toggle();
+          $('#header').toggle();
+          $('#myCarousel').show();
           //build emotion radar chart
             var newData = data[0].faceAttributes.emotion;
             var ctx = document.getElementById("emotionChart").getContext('2d');
