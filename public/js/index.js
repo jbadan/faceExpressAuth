@@ -111,7 +111,7 @@ function processImage() {
               }
             }
           });
-            })
+        })
         .fail(function(jqXHR, textStatus, errorThrown) {
             // Display error message.
             var errorString = (errorThrown === "") ? "Error. " : errorThrown + " (" + jqXHR.status + "): ";
