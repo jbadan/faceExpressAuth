@@ -10,7 +10,9 @@
   <body>
     <%- JSON.stringify(currentUser) %>
     <% include partials/alerts %>
-    <div id='loading_wrap' class="spinner"></div>
+    <div id='loading_wrap'>
+      <div class="spinner"></div>
+    </div>
     <nav class="navbar navbar-default">
       <div class="container-fluid">
         <div class="navbar-header">
