@@ -33,14 +33,11 @@ app.use(function(req, res, next) {
   res.locals.currentUser = req.user;
   next();
 });
-
+var images = [];
 var passport = require('./config/ppConfig');
 // initialize the passport configuration and session as middleware
 app.use(passport.initialize());
 app.use(passport.session());
-
-var images = [];
-console.log(images);
 
 app.get('/', function(req, res) {
     res.render('index', {images, cloudinary});

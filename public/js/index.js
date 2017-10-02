@@ -75,8 +75,15 @@ function processImage() {
                   ]
                 },
                 options: {
-                  scales:{
+                  legend: {
+                    position: "bottom",
                     display: false
+                  },
+                  scales:{
+                    display: false,
+                    ticks: {
+                      display: false
+                    },
                   },
                   title: {
                     display: true,
