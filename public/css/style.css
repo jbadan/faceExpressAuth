@@ -53,4 +53,9 @@ body{
 }
 h1{
   font-family: 'Montserrat'
+  color: #024959;
+}
+
+.navbar{
+  background: #F24738;
 }
