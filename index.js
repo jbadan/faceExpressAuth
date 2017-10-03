@@ -6,6 +6,7 @@ var cloudinary = require('cloudinary');
 var upload = multer({dest: './uploads/'});
 var bodyParser = require('body-parser');
 var request = require('request');
+var db = require('./models');
 var app = express();
 
 var session = require('express-session');
@@ -48,20 +49,17 @@ app.post('/', upload.single('myFile'), function(req,res){
     images = [];
 		images.push(result.public_id);
     //add if logged in - find userId then add cloudinary url to cloudinary model
-	   if(req.currentUser){
-		     db.user.findById(req.currentUser.id).then(function(user) {
-           user.createCloudinary({
-             src: result.public_id
-           }).then(function(){})
-	       });
-      }
+    // if(req.user){
+		//   db.user.findById(req.user.id).then(function(user) {
+    //     user.createCloudinary({
+    //       src: result.public_id
+    //     }).then(function(){})
+	  //    });
+    //  }
   res.render('display', {images, cloudinary});
   });
 });
 
-app.get('/profile', isLoggedIn, function(req, res) {
-  res.render('profile');
-});
 
 app.use('/auth', require('./controllers/auth'));
 app.use('/profile', require('./controllers/profile'));
