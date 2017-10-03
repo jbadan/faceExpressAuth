@@ -4,8 +4,8 @@
   <div class=row>
     <div class="col-md-12">
       <% user.cloudinaries.forEach(function(cloudinary){ %>
-      <% var imgUrl = cloudinary.src %>
-      <img class="img-responsive col-lg-offset-3" src="<%= imgUrl %>">
+      <% var imgUrl = cloudinary2.url(cloudinary.src, {width: 250, height: 250}); %>
+      <img id="image" class="img-responsive" src="<%= imgUrl %>">
       <% }) %>
     </div>
   </div>

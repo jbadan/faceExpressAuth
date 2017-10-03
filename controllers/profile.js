@@ -4,6 +4,7 @@ var isLoggedIn = require("../middleware/isLoggedIn");
 var passport = require('../config/ppConfig');
 var multer = require('multer');
 var cloudinary = require('cloudinary');
+var cloudinary2 = require('cloudinary');
 var upload = multer({dest: './uploads/'});
 var router = express.Router();
 
@@ -16,7 +17,7 @@ router.get('/', isLoggedIn, function(req, res){
   })
   .then(function(user){
     if(!user) throw Error();
-    res.render('profile/index', {user: user});
+    res.render('profile/index', {user: user, cloudinary2});
   })
   .catch(function(error){
     res.status(400).send("error");
