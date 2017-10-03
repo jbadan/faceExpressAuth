@@ -53,9 +53,41 @@ body{
   margin: 0%;
   background: #F24738;
 }
-h1{
-  font-family: 'Montserrat'
-  color: #024959;
+h1, h3{
+  font-family: 'Montserrat';
+  color: white;
+  font-size: 8em;
+  padding: 20px;
+}
+h3{
+  font-size: 2em;
+}
+p{
+  color: white;
+  padding: 20px;
+  letter-spacing: 2px;
+}
+input[type=file] {
+  margin: 0 auto;
+  padding: 2px;
+  color: white;
+}
+#try{
+  border: 8px double white;
+  padding: 10px;
+  margin: 2px;
+  text-align: center;
+}
+#inputImage {
+    margin: auto;
+}
+#image{
+  border: 10px solid white;
+}
+#myCarousel{
+  border-radius: 5px;
+  margin: 20px;
+  padding: 20px;
 }
 .navbar{
   background: white;
@@ -65,23 +97,11 @@ h1{
   text-align: center;
 }
 
-#inputImage {
-    margin: auto;
-}
-
-#image{
-  border: 10px solid white;
-}
-
 .imageCharts{
   display: flex;
   align-items: center;
 }
-#myCarousel{
-  border-radius: 5px;
-  margin: 20px;
-  padding: 20px;
-}
+
 .carousel-control.left, .carousel-control.right {
     background-image: none
 }
@@ -101,8 +121,4 @@ h1{
 .addMore{
   text-align: center;
   color: white;
-}
-input[type=file] {
-  margin: 0 auto;
-  padding: 2px;
 }
