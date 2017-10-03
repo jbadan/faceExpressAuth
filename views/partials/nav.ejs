@@ -13,7 +13,7 @@
       </ul>
       <ul class="nav navbar-nav navbar-right">
           <% if (currentUser) { %>
-            <li><a class="navbar-text navbar-left btn btn-link btn-lg" href="/profile">Profile</a></li>
+            <li><a class="navbar-text navbar-left btn btn-link btn-lg" href="/profile"><i class="fa fa-user-o" aria-hidden="true"></i> Profile</a></li>
             <li><a class="navbar-text navbar-left btn btn-link btn-lg" href="/auth/logout">Logout</a></li>
           <% } else { %>
             <li><button type="button" class="navbar-text navbar-left btn btn-link btn-lg" data-toggle="modal" data-target="#logInModal">Log in</button></li>
