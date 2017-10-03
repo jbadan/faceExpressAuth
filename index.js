@@ -50,17 +50,10 @@ app.post('/', upload.single('myFile'), function(req,res){
 	cloudinary.uploader.upload(req.file.path,function(result){
     images = [];
 		images.push(result.public_id);
-    //add if logged in - find userId then add cloudinary url to cloudinary model
-    // if(req.user){
-		//   db.user.findById(req.user.id).then(function(user) {
-    //     user.createCloudinary({
-    //       src: result.public_id
-    //     }).then(function(){})
-	  //    });
-    //  }
-  res.render('display', {images, cloudinary});
+    res.render('display', {images, cloudinary});
   });
 });
+
 
 
 app.use('/auth', require('./controllers/auth'));

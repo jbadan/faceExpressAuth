@@ -39,9 +39,18 @@ router.post('/', upload.single('myFile'), function(req,res){
   });
 });
 
-router.get('/display/:id'), function(req, res){
-  console.log(req.body);
-  res.render('/');
-}
+router.get('/display', isLoggedIn, function(req, res){
+    res.render('display', {images, cloudinary});
+});
+
+router.delete('/:id', function(req, res) {
+    var imageToDelete = req.params.id;
+    console.log(imageToDelete);
+    db.cloudinary.destroy({
+      where: {id: imageToDelete}
+    }).then(function(){
+      res.redirect('/profile/index');
+    })
+});
 
 module.exports = router;

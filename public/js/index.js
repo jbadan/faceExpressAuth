@@ -37,13 +37,11 @@ $('#authPassword, #confirmPassword').on('keyup', function () {
   } else
     $('#message').html('Passwords do not match').css('color', 'red');
 });
-
 $(function() {
   $(":password").keyup(check_submit).each(function() {
     check_submit();
   });
 });
-
 function check_submit() {
   if ($('#authPassword').val() != $('#confirmPassword').val()) {
     $(":submit").attr("disabled", true);
@@ -51,11 +49,22 @@ function check_submit() {
     $(":submit").removeAttr("disabled");
   }
 }
-
 $(function() {
     $('.imageCharts').hide();
 });
 
+//delete image from profile
+$('.delete-link').on('click', function(e) {
+  e.preventDefault();
+  var deleteUrl = $(this).attr('href');
+  $.ajax({
+    method: 'DELETE',
+    url: deleteUrl
+  }).done(function(data) {
+    // get data returned from the DELETE route
+    window.location.reload();
+  });
+});
 
 // send cloudinary url to api for facial recognition
 function processImage() {
