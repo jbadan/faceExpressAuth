@@ -65,6 +65,7 @@ h3{
 p{
   color: white;
   padding: 20px;
+  padding-top: 40px;
   letter-spacing: 2px;
 }
 input[type=file] {
@@ -106,12 +107,14 @@ input[type=submit]:hover{
   margin-left: 40%;
   color: white;
 }
-
+#header img, h1{
+  display: inline;
+}
+#header h1{
+  vertical-align: bottom;
+}
 #image{
   border: 10px solid white;
-}
-#myExampleCarousel{
-
 }
 #myCarousel{
   border-radius: 5px;
