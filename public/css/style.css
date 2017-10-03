@@ -96,6 +96,12 @@ input[type=submit]:hover{
 .chart-container img{
   animation-delay: 1s;
 }
+
+#downArrow{
+  margin-left: 40%;
+  color: white;
+}
+
 #image{
   border: 10px solid white;
 }
