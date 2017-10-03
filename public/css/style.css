@@ -72,22 +72,52 @@ input[type=file] {
   padding: 2px;
   color: white;
 }
-#try{
+input[type=submit]{
+  background: none;
+  border: 1px solid #BF2A2A;
+  margin: 5px;
+  color: #BF2A2A;
+}
+input[type=submit]:hover{
+  background: white;
+  color: #BF2A2A;
+}
+.try{
   border: 8px double white;
   padding: 10px;
   margin: 2px;
   text-align: center;
 }
-#inputImage {
+.inputImage {
     margin: auto;
+    display: block;
+}
+
+.chart-container img{
+  animation-delay: 1s;
 }
 #image{
   border: 10px solid white;
+}
+#myExampleCarousel{
+
 }
 #myCarousel{
   border-radius: 5px;
   margin: 20px;
   padding: 20px;
+}
+#animated{
+  -webkit-animation-duration: 2s;
+  -webkit-animation-delay: 8s;
+  -webkit-animation-iteration-count: 1;
+}
+#exampleRow{
+  background: #F2C777;
+  margin-top: 20px;
+}
+.row{
+  padding:40px 0;
 }
 .navbar{
   background: white;
