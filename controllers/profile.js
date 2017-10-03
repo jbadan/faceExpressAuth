@@ -39,5 +39,9 @@ router.post('/', upload.single('myFile'), function(req,res){
   });
 });
 
+router.get('/display/:id'), function(req, res){
+  console.log(req.body);
+  res.render('/');
+}
 
 module.exports = router;

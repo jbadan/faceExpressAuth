@@ -1,21 +1,23 @@
 <div class="container-fluid">
-
-<h1> Hello, <%=user.name%></h1>
-  <div class=row>
-    <div class="col-md-12">
-      <% user.cloudinaries.forEach(function(cloudinary){ %>
-      <% var imgUrl = cloudinary2.url(cloudinary.src, {width: 250, height: 250}); %>
-      <img id="image" class="img-responsive" src="<%= imgUrl %>">
-      <% }) %>
-    </div>
-  </div>
   <div class="row">
-    <div class="col-md-12 addMore">
-        <h2> <i class="glyphicon glyphicon-picture"></i> Want more? Choose another image:</h2>
+    <div class="col-md-8 center">
+      <h2 class="animated slideInLeft"> Hello, <%=user.name%>!</h2>
+      <p> View your previously uploaded images or add a new image here.</p>
+    </div>
+    <div class="col-md-3 try">
+        <h3> <i class="glyphicon glyphicon-picture"></i> Want more? Choose another image:</h3>
         <form enctype="multipart/form-data" action="/profile/" method="post">
           <input type="file" name="myFile">
           <input type="submit" class="btn btn-default">
         </form>
+    </div>
+  </div>
+  <div class=row>
+    <div class="col-md-12">
+      <% user.cloudinaries.forEach(function(cloudinary){ %>
+      <% var imgUrl = cloudinary2.url(cloudinary.src, {width: 250, height: 250}); %>
+      <a href="#"><img class="img-responsive try inputImage" src="<%= imgUrl %>"></a>
+      <% }) %>
     </div>
   </div>
 </div>
