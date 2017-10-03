@@ -3,6 +3,33 @@ $(document).ready(function(){
   $('#loading_wrap').remove();
 });
 
+//custom carousel animations on homepage
+//https://www.sitepoint.com/bootstrap-carousel-with-css3-animations/
+var $myCarousel = $('#myExampleCarousel');
+$myCarousel.carousel();
+function doAnimations(elems) {
+  var animEndEv = 'webkitAnimationEnd animationend';
+  elems.each(function () {
+    var $this = $(this),
+        $animationType = $this.data('animation');
+    $this.addClass($animationType).one(animEndEv, function () {
+      $this.removeClass($animationType);
+    });
+  });
+}
+var $firstAnimatingElems = $myCarousel.find('.item:first')
+                           .find('[data-animation ^= "animated"]');
+doAnimations($firstAnimatingElems);
+$myCarousel.carousel('pause');
+$myCarousel.on('slide.bs.carousel', function (e) {
+  var $animatingElems = $(e.relatedTarget)
+                        .find("[data-animation ^= 'animated']");
+  doAnimations($animatingElems);
+});
+$myCarousel.carousel({
+  interval: 4000
+});
+
 // passwords matching on sign up
 $('#authPassword, #confirmPassword').on('keyup', function () {
   if ($('#authPassword').val() == $('#confirmPassword').val()) {
