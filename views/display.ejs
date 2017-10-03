@@ -3,7 +3,7 @@
 		<h1 id="header">Check you out!</h1>
 			<% images.forEach(function(image){ %>
 			<% var imgUrl = cloudinary.url(image, {width: 450, height: 450}); %>
-			<img class="img-responsive col-lg-offset-3 inputImage" src="<%= imgUrl %>">
+			<img class="img-responsive col-lg-offset-3 inputImage" id="inputImage" src="<%= imgUrl %>">
 			<% }) %>
 			<br>
 			<button class="btn btn-default btn-lg" id="renderCharts" onclick="processImage()">Show me the results!</button>

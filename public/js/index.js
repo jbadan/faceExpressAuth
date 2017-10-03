@@ -62,8 +62,8 @@ $('.delete-link').on('click', function(e) {
     url: deleteUrl
   }).done(function(data) {
     // get data returned from the DELETE route
-    window.location.reload();
   });
+  window.location.reload();
 });
 
 // send cloudinary url to api for facial recognition

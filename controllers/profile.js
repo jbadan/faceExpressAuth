@@ -32,7 +32,6 @@ router.post('/', upload.single('myFile'), function(req,res){
         user.createCloudinary({
           src: result.public_id
         }).then(function(){
-
         });
 	    });
     res.render('display', {images, cloudinary});
