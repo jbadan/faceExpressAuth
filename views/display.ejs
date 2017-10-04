@@ -2,7 +2,7 @@
 	<div class="jumbotron" id="jumbotron">
 		<h1 id="header">Check you out!</h1>
 			<% images.forEach(function(image){ %>
-			<% var imgUrl = cloudinary.url(image, {width: 450, height: 450}); %>
+			<% var imgUrl = cloudinary.url(image); %>
 			<img class="img-responsive col-lg-offset-3 inputImage" id="inputImage" src="<%= imgUrl %>">
 			<% }) %>
 			<br>
@@ -12,7 +12,7 @@
 			<div class="col-md-3">
 				<div id="imageBox">
 					<% images.forEach(function(image){ %>
-					<% var imgUrl = cloudinary.url(image, {width: 250, height: 250}); %>
+					<% var imgUrl = cloudinary.url(image); %>
 					<img id="image" class="img-responsive" src="<%= imgUrl %>">
 					<% }) %>
 				</div>
