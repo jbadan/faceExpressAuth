@@ -149,9 +149,9 @@ input[type=submit]:hover{
   margin-top: 20px;
 }
 
-.row{
+/*.row{
   padding:40px 0;
-}
+}*/
 .navbar{
   background: white;
 }
@@ -175,11 +175,25 @@ h5{
   font-size: 3em;
 }
 
+.displayBox{
+  text-align: center;
+}
+
 #hairError, #emotionError{
   text-align: center;
   color: #024959;
   height: 350px;
   overflow: hidden;
+  border-radius: 5px;
+}
+
+#otherData{
+  background: white;
+  font-size: 2em;
+  width: 350px;
+  margin: 0 auto;
+  border-radius: 5px;
+
 }
 .carousel-control.left, .carousel-control.right {
     background-image: none
@@ -201,6 +215,7 @@ h5{
 }
 .addMore{
   text-align: center;
+  min-height: 100px;
 }
 .addMore a{
   text-decoration: none;

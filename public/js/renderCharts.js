@@ -34,6 +34,10 @@ function processImage() {
       for(i=0;i<data.length; i++){
         var faceBox = $("<div></div>").css({"position":"absolute", "top":data[i].faceRectangle.top, "left":data[i].faceRectangle.left, "width":data[i].faceRectangle.width, "height":data[i].faceRectangle.height, "borderWidth":"3px", "borderStyle":"solid", "borderColor": borderColors[i]});
         $('#imageBox').append(faceBox);
+        var gender = $("<div>Gender: "+data[i].faceAttributes.gender+"</div>").css({"color":borderColors[i]});
+        $("#otherData").append(gender);
+        var age = $("<div>Age: "+data[i].faceAttributes.age+"</div>").css({"color":borderColors[i]});
+        $("#otherData").append(age);
           var newData = data[i].faceAttributes.emotion;
           dataSetData[i] = {
             label: labels[i],
@@ -59,7 +63,6 @@ function processImage() {
             };
           }
         }
-        //add if statement for error handling
         if(dataSetData.length === 0){
           $("#emotionChart").remove();
           $('<h5>Sorry, face detection was unable to recognize any emotions in your face. <br><i class="fa fa-frown-o fa-2x" aria-hidden="true"></i></h5>').appendTo('#emotionError');
@@ -88,7 +91,6 @@ function processImage() {
               }
           });
         }
-          //add if there is no hair data show error message, if not show chart
         if(hairDataSetData.length === 0){
           $("#hairChart").remove();
           $('<h5>Sorry, face detection was unable to recognize any hair in your image. <br><i class="fa fa-frown-o fa-2x" aria-hidden="true"></i></h5>').appendTo('#hairError');
@@ -114,35 +116,11 @@ function processImage() {
                   },
                 },
                 title: {
-                  display: true,
-                  text: 'Hair color'
+                  display: false
                 }
               }
             });
           }
-          // build hair data chart
-        //   var hairData = data[i].faceAttributes.hair.hairColor;
-        //   var ctx1 = document.getElementById("hairChart").getContext('2d');
-        //   var myHairChart = new Chart(ctx1, {
-        //     type: 'horizontalBar',
-        //     data: {
-        //       labels: ["Brown", "Black", "Other", "Blond", "Red", "Grey"],
-        //       datasets: [
-        //         {
-        //         label: "Confidence",
-        //         backgroundColor: ["#8b7355","#000000","#bf3eff","#ffb90f","#c45850", "#8a8a8a"],
-        //         data: [hairData[0].confidence, hairData[1].confidence, hairData[2].confidence, hairData[3].confidence, hairData[4].confidence, hairData[5].confidence]
-        //         }
-        //       ]
-        //     },
-        //   options: {
-        //     legend: { display: false },
-        //     title: {
-        //       display: true,
-        //       text: 'Hair Color'
-        //     }
-        //   }
-        // });
     })
     .fail(function(jqXHR, textStatus, errorThrown) {
         var errorString = (errorThrown === "") ? "Error. " : errorThrown + " (" + jqXHR.status + "): ";
