@@ -65,7 +65,7 @@ function processImage() {
         }
         if(dataSetData.length === 0){
           $("#emotionChart").remove();
-          $('<h5>Sorry, face detection was unable to recognize any emotions in your face. <br><i class="fa fa-frown-o fa-2x" aria-hidden="true"></i></h5>').appendTo('#emotionError');
+          $('<h5>Sorry, unable to recognize any emotions. <br><i class="fa fa-frown-o fa-2x" aria-hidden="true"></i></h5>').appendTo('#emotionError');
         }else{
           var ctx = document.getElementById("emotionChart").getContext('2d');
           var myRadarChart = new Chart(ctx, {
@@ -93,7 +93,7 @@ function processImage() {
         }
         if(hairDataSetData.length === 0){
           $("#hairChart").remove();
-          $('<h5>Sorry, face detection was unable to recognize any hair in your image. <br><i class="fa fa-frown-o fa-2x" aria-hidden="true"></i></h5>').appendTo('#hairError');
+          $('<h5>Sorry, unable to recognize any hair in your image. <br><i class="fa fa-frown-o fa-2x" aria-hidden="true"></i></h5>').appendTo('#hairError');
         }else{
           var ctx1 = document.getElementById("hairChart").getContext('2d');
           var myRadarChart = new Chart(ctx1, {
