@@ -10,10 +10,12 @@
 	</div>
 		<div class="row imageCharts">
 			<div class="col-md-3">
-				<% images.forEach(function(image){ %>
-				<% var imgUrl = cloudinary.url(image, {width: 250, height: 250}); %>
-				<img id="image" class="img-responsive" src="<%= imgUrl %>">
-				<% }) %>
+				<div id="imageBox">
+					<% images.forEach(function(image){ %>
+					<% var imgUrl = cloudinary.url(image, {width: 250, height: 250}); %>
+					<img id="image" class="img-responsive" src="<%= imgUrl %>">
+					<% }) %>
+				</div>
 			</div>
 			<div class="col-md-9">
 				<div id="myCarousel" class="carousel slide" data-ride="carousel">
@@ -50,7 +52,7 @@
 	</div>
 	<div class="row imageCharts">
 		<div class="col-md-12 addMore">
-				<a href="/">Back Home</a>
+				<a href="/">Back to Home</a>
 		</div>
 	</div>
 </div>

@@ -24,6 +24,9 @@ function processImage() {
     .done(function(data) {
       $('#jumbotron').toggle();
       $('.imageCharts').show();
+      var faceBox = $("<div></div>").css({"position":"absolute", "top":data[0].faceRectangle.top, "left":data[0].faceRectangle.left, "width":data[0].faceRectangle.width, height:data[0].faceRectangle.height, "border":"2px solid blue"});
+      $('#imageBox').append(faceBox);
+
         var newData = data[0].faceAttributes.emotion;
         var ctx = document.getElementById("emotionChart").getContext('2d');
         var myRadarChart = new Chart(ctx, {

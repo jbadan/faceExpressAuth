@@ -161,7 +161,9 @@ input[type=submit]:hover{
   background: white;
   text-align: center;
 }
-
+#imageBox{
+  background: yellow;
+}
 .imageCharts{
   display: flex;
   align-items: center;
@@ -191,4 +193,5 @@ input[type=submit]:hover{
 .addMore a{
   text-decoration: none;
   color: white;
+  font-size: 1.5em;
 }

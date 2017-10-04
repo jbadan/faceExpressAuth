@@ -47,7 +47,7 @@ app.get('/', function(req, res) {
 });
 
 app.post('/', upload.single('myFile'), function(req,res){
-	cloudinary.uploader.upload(req.file.path,function(result){
+	cloudinary.v2.uploader.upload(req.file.path,{ width: 250, height: 250, crop: "limit" },function(error, result){
     images = [];
 		images.push(result.public_id);
     res.render('display', {images, cloudinary});
