@@ -45,8 +45,23 @@ function processImage() {
             pointBackgroundColor: pointBackgroundColors[i],
             pointBorderColor: "#fff",
             data: [newData.anger,newData.contempt, newData.disgust, newData.fear, newData.happiness, newData.neutral, newData.sadness, newData.surprise]
+          };
+          var hairData = data[i].faceAttributes.hair.hairColor;
+          if(hairData.length === 0){
+            //if the computer doesn't detect hair display message here
+          }else{
+            hairDataSetData[i] = {
+              label: labels[i],
+              backgroundColor: backgroundColors[i],
+              borderColor: borderColors[i],
+              pointBorderColor: "#fff",
+              pointBackgroundColor: pointBackgroundColors[i],
+              pointBorderColor: "#fff",
+              data: [hairData[0].confidence, hairData[1].confidence, hairData[2].confidence, hairData[3].confidence, hairData[4].confidence, hairData[5].confidence]
+            };
           }
         }
+        //add if statement for error handling 
           var ctx = document.getElementById("emotionChart").getContext('2d');
           var myRadarChart = new Chart(ctx, {
               type: 'radar',
@@ -70,6 +85,34 @@ function processImage() {
                 title: {
                   display: true,
                   text: 'Distribution of Emotions'
+                }
+              }
+          });
+          //add if there is no hair data show error message, if not show chart
+
+          var ctx1 = document.getElementById("hairChart").getContext('2d');
+          var myRadarChart = new Chart(ctx1, {
+              type: 'radar',
+              data: {
+                labels: ["Brown", "Black", "Other", "Blond", "Red", "Grey"],
+                datasets: hairDataSetData
+              },
+              options: {
+                legend: {
+                  position: "bottom",
+                  display: false
+                },
+                scales:{
+                  display: false,
+                  ticks: {
+                    display: false,
+                    min: 0,
+                    max: 1
+                  },
+                },
+                title: {
+                  display: true,
+                  text: 'Hair color'
                 }
               }
           });
