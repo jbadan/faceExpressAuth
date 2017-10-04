@@ -31,7 +31,6 @@ function processImage() {
       var backgroundColors = ['rgba(255,99,132,0.2)', "rgba(179,181,198,0.2)", "rgba(2,73,89,0.2)", "rgba(242,199,199,0.2)", "rgba(9,33,64,0.2)", "rgba(191,42,42,0.2)"];
       var borderColors = ["rgba(255,99,132,1)", "rgba(179,181,198,1)", "rgba(2,73,89,1)", "rgba(242,199,199,1)", "rgba(9,33,64,1)", "rgba(191,42,42,0.2)"];
 
-      console.log(data);
       for(i=0;i<data.length; i++){
         var faceBox = $("<div></div>").css({"position":"absolute", "top":data[i].faceRectangle.top, "left":data[i].faceRectangle.left, "width":data[i].faceRectangle.width, "height":data[i].faceRectangle.height, "borderWidth":"3px", "borderStyle":"solid", "borderColor": borderColors[i]});
         $('#imageBox').append(faceBox);
@@ -61,6 +60,10 @@ function processImage() {
           }
         }
         //add if statement for error handling
+        if(dataSetData.length === 0){
+          $("#emotionChart").remove();
+          $('<h5>Sorry, face detection was unable to recognize any faces in your image.</h5>').appendTo('#emotionError');
+        }else{
           var ctx = document.getElementById("emotionChart").getContext('2d');
           var myRadarChart = new Chart(ctx, {
               type: 'radar',
@@ -87,8 +90,12 @@ function processImage() {
                 }
               }
           });
+        }
           //add if there is no hair data show error message, if not show chart
-
+        if(hairDataSetData.length === 0){
+          $("#hairChart").remove();
+          $('<h5>Sorry, face detection was unable to recognize any hair in your image.</h5>').appendTo('#hairError');
+        }else{
           var ctx1 = document.getElementById("hairChart").getContext('2d');
           var myRadarChart = new Chart(ctx1, {
               type: 'radar',
@@ -114,7 +121,8 @@ function processImage() {
                   text: 'Hair color'
                 }
               }
-          });
+            });
+          }
           // build hair data chart
         //   var hairData = data[i].faceAttributes.hair.hairColor;
         //   var ctx1 = document.getElementById("hairChart").getContext('2d');

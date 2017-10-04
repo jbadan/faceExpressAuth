@@ -133,9 +133,7 @@ input[type=submit]:hover{
 #header h1{
   vertical-align: bottom;
 }
-#image{
-  border: 10px solid white;
-}
+
 #myCarousel{
   border-radius: 5px;
   margin: 20px;
@@ -162,13 +160,23 @@ input[type=submit]:hover{
   text-align: center;
 }
 #imageBox{
-  background: yellow;
+  min-width: 350px;
+  max-width: 355px;
+  border: 4px double white;
+  display: table;
+  margin: 0 auto;
+  position: relative;
 }
 .imageCharts{
-  display: flex;
   align-items: center;
 }
 
+#hairError, #emotionError{
+  text-align: center;
+  font-size: 3em;
+  color: #024959;
+  height: 400px;
+}
 .carousel-control.left, .carousel-control.right {
     background-image: none
 }
