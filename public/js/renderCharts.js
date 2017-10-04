@@ -50,7 +50,9 @@ function processImage() {
               scales:{
                 display: false,
                 ticks: {
-                  display: false
+                  display: false,
+                  min: 0,
+                  max: 1
                 },
               },
               title: {
