@@ -25,7 +25,7 @@ router.get('/', isLoggedIn, function(req, res){
 });
 
 router.post('/', upload.single('myFile'), function(req,res){
-	cloudinary.v2.uploader.upload(req.file.path,{ width: 250, height: 250, crop: "limit" },function(error, result){
+	cloudinary.v2.uploader.upload(req.file.path,{ width: 350, height: 350, crop: "limit" },function(error, result){
     images = [];
 		images.push(result.public_id);
 		  db.user.findById(req.user.id).then(function(user) {
