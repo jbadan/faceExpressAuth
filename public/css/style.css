@@ -174,16 +174,12 @@ input[type=submit]:hover{
 h5{
   font-size: 3em;
 }
-canvas{
-  width: 100% !important;
-  max-width: 800px;
-  height: auto !important;
-}
 
 #hairError, #emotionError{
   text-align: center;
   color: #024959;
-  height: 400px;
+  height: 350px;
+  overflow: hidden;
 }
 .carousel-control.left, .carousel-control.right {
     background-image: none

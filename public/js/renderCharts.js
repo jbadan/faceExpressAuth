@@ -28,8 +28,8 @@ function processImage() {
       $('#jumbotron').toggle();
       $('.imageCharts').show();
       var labels = ["Face", "Face 2", "Face 3", "Face 4", "Face 5", "Face 6"];
-      var backgroundColors = ['rgba(255,99,132,0.2)', "rgba(179,181,198,0.2)", "rgba(2,73,89,0.2)", "rgba(242,199,199,0.2)", "rgba(9,33,64,0.2)", "rgba(191,42,42,0.2)"];
-      var borderColors = ["rgba(255,99,132,1)", "rgba(179,181,198,1)", "rgba(2,73,89,1)", "rgba(242,199,199,1)", "rgba(9,33,64,1)", "rgba(191,42,42,0.2)"];
+      var backgroundColors = ["rgba(2,73,89,0.2)",'rgba(255,99,132,0.2)', "rgba(179,181,198,0.2)", "rgba(242,199,199,0.2)", "rgba(9,33,64,0.2)", "rgba(191,42,42,0.2)"];
+      var borderColors = ["rgba(2,73,89,1)","rgba(255,99,132,1)", "rgba(179,181,198,1)", "rgba(242,199,199,1)", "rgba(9,33,64,1)", "rgba(191,42,42,0.2)"];
 
       for(i=0;i<data.length; i++){
         var faceBox = $("<div></div>").css({"position":"absolute", "top":data[i].faceRectangle.top, "left":data[i].faceRectangle.left, "width":data[i].faceRectangle.width, "height":data[i].faceRectangle.height, "borderWidth":"3px", "borderStyle":"solid", "borderColor": borderColors[i]});
@@ -42,7 +42,7 @@ function processImage() {
             pointBorderColor: "#fff",
             pointBackgroundColor: borderColors[i],
             pointBorderColor: "#fff",
-            data: [newData.anger,newData.contempt, newData.disgust, newData.fear, newData.happiness, newData.neutral, newData.sadness, newData.surprise]
+            data: [newData.anger,newData.contempt, newData.disgust, newData.fear, newData.neutral, newData.happiness, newData.sadness, newData.surprise]
           };
           var hairData = data[i].faceAttributes.hair.hairColor;
           if(hairData.length === 0){
@@ -62,13 +62,13 @@ function processImage() {
         //add if statement for error handling
         if(dataSetData.length === 0){
           $("#emotionChart").remove();
-          $('<h5>Sorry, face detection was unable to recognize any faces in your image. <br><i class="fa fa-frown-o fa-4x" aria-hidden="true"></i></h5>').appendTo('#emotionError');
+          $('<h5>Sorry, face detection was unable to recognize any emotions in your face. <br><i class="fa fa-frown-o fa-2x" aria-hidden="true"></i></h5>').appendTo('#emotionError');
         }else{
           var ctx = document.getElementById("emotionChart").getContext('2d');
           var myRadarChart = new Chart(ctx, {
               type: 'radar',
               data: {
-                labels: ["Anger", "Contempt", "Disgust", "Fear", "Happiness", "Neutral", "Sadness", "Surprise"],
+                labels: ["Anger", "Contempt", "Disgust", "Fear", "Neutral", "Happiness", "Sadness", "Surprise"],
                 datasets: dataSetData
               },
               options: {
@@ -76,17 +76,14 @@ function processImage() {
                   position: "bottom",
                   display: false
                 },
-                scales:{
-                  display: false,
+                scale:{
                   ticks: {
-                    display: false,
-                    min: 0,
+                    beginAtZero: true,
                     max: 1
                   },
                 },
                 title: {
-                  display: true,
-                  text: 'Distribution of Emotions'
+                  display: false
                 }
               }
           });
@@ -94,7 +91,7 @@ function processImage() {
           //add if there is no hair data show error message, if not show chart
         if(hairDataSetData.length === 0){
           $("#hairChart").remove();
-          $('<h5>Sorry, face detection was unable to recognize any hair in your image. <br><i class="fa fa-frown-o fa-4x" aria-hidden="true"></i></h5>').appendTo('#hairError');
+          $('<h5>Sorry, face detection was unable to recognize any hair in your image. <br><i class="fa fa-frown-o fa-2x" aria-hidden="true"></i></h5>').appendTo('#hairError');
         }else{
           var ctx1 = document.getElementById("hairChart").getContext('2d');
           var myRadarChart = new Chart(ctx1, {
