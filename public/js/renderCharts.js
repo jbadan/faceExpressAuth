@@ -27,14 +27,13 @@ function processImage() {
     .done(function(data) {
       $('#jumbotron').toggle();
       $('.imageCharts').show();
-      var labels = ["Face", "Face 2", "Face 3"];
-      var backgroundColors = ['rgba(255,99,132,0.2)', "rgba(179,181,198,0.2)"];
-      var borderColors = ["rgba(255,99,132,1)", "rgba(179,181,198,1)"];
-      var pointBackgroundColors = ["rgba(255,99,132,1)", "rgba(179,181,198,1)"];
+      var labels = ["Face", "Face 2", "Face 3", "Face 4", "Face 5", "Face 6"];
+      var backgroundColors = ['rgba(255,99,132,0.2)', "rgba(179,181,198,0.2)", "rgba(2,73,89,0.2)", "rgba(242,199,199,0.2)", "rgba(9,33,64,0.2)", "rgba(191,42,42,0.2)"];
+      var borderColors = ["rgba(255,99,132,1)", "rgba(179,181,198,1)", "rgba(2,73,89,1)", "rgba(242,199,199,1)", "rgba(9,33,64,1)", "rgba(191,42,42,0.2)"];
 
       console.log(data);
       for(i=0;i<data.length; i++){
-        var faceBox = $("<div></div>").css({"position":"absolute", "top":data[i].faceRectangle.top, "left":data[i].faceRectangle.left, "width":data[i].faceRectangle.width, height:data[i].faceRectangle.height, "border":"2px solid black"});
+        var faceBox = $("<div></div>").css({"position":"absolute", "top":data[i].faceRectangle.top, "left":data[i].faceRectangle.left, "width":data[i].faceRectangle.width, "height":data[i].faceRectangle.height, "borderWidth":"3px", "borderStyle":"solid", "borderColor": borderColors[i]});
         $('#imageBox').append(faceBox);
           var newData = data[i].faceAttributes.emotion;
           dataSetData[i] = {
@@ -42,26 +41,26 @@ function processImage() {
             backgroundColor: backgroundColors[i],
             borderColor: borderColors[i],
             pointBorderColor: "#fff",
-            pointBackgroundColor: pointBackgroundColors[i],
+            pointBackgroundColor: borderColors[i],
             pointBorderColor: "#fff",
             data: [newData.anger,newData.contempt, newData.disgust, newData.fear, newData.happiness, newData.neutral, newData.sadness, newData.surprise]
           };
           var hairData = data[i].faceAttributes.hair.hairColor;
           if(hairData.length === 0){
-            //if the computer doesn't detect hair display message here
+            //do nothing
           }else{
             hairDataSetData[i] = {
               label: labels[i],
               backgroundColor: backgroundColors[i],
               borderColor: borderColors[i],
               pointBorderColor: "#fff",
-              pointBackgroundColor: pointBackgroundColors[i],
+              pointBackgroundColor: borderColors[i],
               pointBorderColor: "#fff",
               data: [hairData[0].confidence, hairData[1].confidence, hairData[2].confidence, hairData[3].confidence, hairData[4].confidence, hairData[5].confidence]
             };
           }
         }
-        //add if statement for error handling 
+        //add if statement for error handling
           var ctx = document.getElementById("emotionChart").getContext('2d');
           var myRadarChart = new Chart(ctx, {
               type: 'radar',
