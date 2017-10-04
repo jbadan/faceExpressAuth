@@ -107,6 +107,21 @@ input[type=submit]:hover{
   padding: 20px;
 }
 
+.imageHolder{
+  position:relative;
+  display: inline-block;
+  height: 300px;
+  width: 300px;
+}
+.imageHolder button{
+  position: absolute;
+  top: 20px;
+  right: 15px;
+  border:none;
+  background: #F2C777;
+  color: white;
+}
+
 #downArrow{
   margin-left: 40%;
   color: white;
@@ -134,6 +149,7 @@ input[type=submit]:hover{
   background: #F2C777;
   margin-top: 20px;
 }
+
 .row{
   padding:40px 0;
 }
