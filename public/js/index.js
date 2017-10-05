@@ -1,7 +1,8 @@
 // loading screen
 $(document).ready(function(){
   $('#loading_wrap').remove();
-   $('[data-toggle="tooltip"]').tooltip(); 
+   $('[data-toggle="tooltip"]').tooltip();
+
 });
 
 //custom carousel animations on homepage
@@ -33,7 +34,7 @@ $myCarousel.carousel({
 
 // passwords matching on sign up
 $('#authPassword, #confirmPassword').on('keyup', function () {
-  if ($('#authPassword').val() == $('#confirmPassword').val()) {
+  if ($('#authPassword').val()!="" &&($('#authPassword').val() == $('#confirmPassword').val())) {
     $('#message').html('Passwords match').css('color', 'green');
   } else
     $('#message').html('Passwords do not match').css('color', 'red');
