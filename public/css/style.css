@@ -97,7 +97,10 @@ input[type=submit]:hover{
     display: inline-block;
     margin: 10px;
 }
-
+.imageResizer{
+  height: 250px;
+  width: 250px;
+}
 .chart-container img{
   animation-delay: 1s;
 }
@@ -116,7 +119,7 @@ input[type=submit]:hover{
 .imageHolder button{
   position: absolute;
   top: 20px;
-  right: 15px;
+  right: 48px;
   border:none;
   background: #F2C777;
   color: white;

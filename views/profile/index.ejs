@@ -17,7 +17,7 @@
       <% user.cloudinaries.forEach(function(cloudinary){ %>
       <% var imgUrl = cloudinary2.url(cloudinary.src); %>
         <div class="imageHolder">
-          <img class="img-responsive try inputImage" src="<%= imgUrl %>">
+          <img class="img-responsive try inputImage imageResizer" src="<%= imgUrl %>">
           <button type="submit" class="delete-link trash" href="/profile/<%=cloudinary.id%>"><i class="fa fa-trash-o fa-2x" aria-hidden="true"></i></button>
         </div>
       <% }) %>
