@@ -15,10 +15,17 @@
 			<div class="try">
 				<h3 id="animated" class="animated tada">Give it a try wihout signing in!</h3>
 				<p>Upload your photo here to see Theia in action.</p>
+				<%if(currentUser){%>
+					<form enctype="multipart/form-data" action="/profile/" method="post">
+	          <input type="file" name="myFile">
+	          <input type="submit" class="btn btn-primary">
+	        </form>
+				<%}else{%>
 				<form enctype="multipart/form-data" action="/" method="post">
 					<input type="file" name="myFile">
 					<input type="submit" class="btn btn-primary">
 				</form>
+			<%}%>
 			</div>
 		</div>
 	</div>
