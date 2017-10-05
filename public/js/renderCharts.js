@@ -33,8 +33,8 @@ function processImage() {
 
       for(i=0;i<data.length; i++){
         //face square
-        var info ="<ul><li>Gender: "+data[i].faceAttributes.gender+"</li><li>Age: "+data[i].faceAttributes.age+"</li><li>Smile: "+data[i].faceAttributes.smile+"</li><li>Glasses: "+data[i].faceAttributes.glasses+"</li></ul>";
-        var faceBox = $("<div></div>").attr({"data-toggle":"tooltip","title":info, "data-html":true}).css({"position":"absolute", "top":data[i].faceRectangle.top, "left":data[i].faceRectangle.left, "width":data[i].faceRectangle.width, "height":data[i].faceRectangle.height, "borderWidth":"3px", "borderStyle":"solid", "borderColor": borderColors[i]});
+        var info ="Gender: "+data[i].faceAttributes.gender+"\n Age: "+data[i].faceAttributes.age+"\n Smile: "+data[i].faceAttributes.smile+"\n Glasses: "+data[i].faceAttributes.glasses;
+        var faceBox = $("<div></div>").attr({"data-toggle":"tooltip","title":info}).css({"position":"absolute", "top":data[i].faceRectangle.top, "left":data[i].faceRectangle.left, "width":data[i].faceRectangle.width, "height":data[i].faceRectangle.height, "borderWidth":"3px", "borderStyle":"solid", "borderColor": borderColors[i]});
         $('#imageBox').append(faceBox);
 
         //demographics
@@ -42,16 +42,16 @@ function processImage() {
         $("#otherData").append(gender);
         var age = $("<div>Age: "+data[i].faceAttributes.age+"</div>").css({"color":borderColors[i]});
         $("#otherData").append(age);
-        if(data[i].faceAttributes.smile > 0){
+        if(data[i].faceAttributes.smile > .49){
           $("#otherData").append('<img src="/img/icons/smile.png">');
         }
         if(data[i].faceAttributes.glasses != "NoGlasses"){
           $("#otherData").append('<img src="/img/icons/glasses-1.png">');
         }
-        if(data[i].faceAttributes.facialHair.beard > 0){
+        if(data[i].faceAttributes.facialHair.beard > .49){
           $("#otherData").append('<img src="/img/icons/beard.png">');
         }
-        if(data[i].faceAttributes.facialHair.moustache > 0){
+        if(data[i].faceAttributes.facialHair.moustache > .49){
           $("#otherData").append('<img src="/img/icons/moustache.png">');
         }
 

@@ -228,3 +228,9 @@ h5{
   color: white;
   font-size: 1.5em;
 }
+.tooltip > .tooltip-inner {
+      background-color: white;
+      border: 1px solid #024959;
+      padding: 15px;
+      font-size: 20px;
+  }
