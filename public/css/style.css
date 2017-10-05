@@ -113,13 +113,13 @@ input[type=submit]:hover{
 .imageHolder{
   position:relative;
   display: inline-block;
-  height: 300px;
-  width: 300px;
+  height: 270px;
+  width: 270px;
 }
 .imageHolder button{
   position: absolute;
-  top: 20px;
-  right: 48px;
+  top: 18px;
+  right: 18px;
   border:none;
   background: #F2C777;
   color: white;
