@@ -195,6 +195,13 @@ h5{
   border-radius: 5px;
 
 }
+
+.padding{
+  padding: 100px 0;
+}
+.carousel{
+  background: #F2C777;
+}
 .carousel-control.left, .carousel-control.right {
     background-image: none
 }
@@ -206,10 +213,6 @@ h5{
     background: #666;
 }
 
-.chart-container{
-  background: white;
-  padding: 40px;
-}
 .center{
   text-align: center;
 }
