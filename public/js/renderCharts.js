@@ -12,7 +12,7 @@ function processImage() {
         "returnFaceAttributes": "age,gender,headPose,smile,facialHair,glasses,emotion,hair,makeup,occlusion,accessories,blur,exposure,noise",
     };
     // Display the image.
-    var sourceImageUrl = document.querySelector("#inputImage").src;
+    var sourceImageUrl = document.querySelector(".inputImage").src;
     //api query
     $.ajax({
         url: uriBase + "?" + $.param(params),
