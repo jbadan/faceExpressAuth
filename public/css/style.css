@@ -160,7 +160,6 @@ input[type=submit]:hover{
   text-align: center;
 }
 #imageBox{
-  min-width: 350px;
   max-width: 355px;
   border: 4px double white;
   display: table;
@@ -185,6 +184,7 @@ h5{
   height: 350px;
   overflow: hidden;
   border-radius: 5px;
+  background: white;
 }
 
 #otherData{
