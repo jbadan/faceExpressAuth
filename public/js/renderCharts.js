@@ -32,12 +32,30 @@ function processImage() {
       var borderColors = ["rgba(2,73,89,1)","rgba(255,99,132,1)", "rgba(179,181,198,1)", "rgba(242,199,199,1)", "rgba(9,33,64,1)", "rgba(191,42,42,0.2)"];
 
       for(i=0;i<data.length; i++){
-        var faceBox = $("<div></div>").css({"position":"absolute", "top":data[i].faceRectangle.top, "left":data[i].faceRectangle.left, "width":data[i].faceRectangle.width, "height":data[i].faceRectangle.height, "borderWidth":"3px", "borderStyle":"solid", "borderColor": borderColors[i]});
+        //face square
+        var info ="<ul><li>Gender: "+data[i].faceAttributes.gender+"</li><li>Age: "+data[i].faceAttributes.age+"</li><li>Smile: "+data[i].faceAttributes.smile+"</li><li>Glasses: "+data[i].faceAttributes.glasses+"</li></ul>";
+        var faceBox = $("<div></div>").attr({"data-toggle":"tooltip","title":info}).css({"position":"absolute", "top":data[i].faceRectangle.top, "left":data[i].faceRectangle.left, "width":data[i].faceRectangle.width, "height":data[i].faceRectangle.height, "borderWidth":"3px", "borderStyle":"solid", "borderColor": borderColors[i]});
         $('#imageBox').append(faceBox);
+
+        //demographics
         var gender = $("<div>Gender: "+data[i].faceAttributes.gender+"</div>").css({"color":borderColors[i]});
         $("#otherData").append(gender);
         var age = $("<div>Age: "+data[i].faceAttributes.age+"</div>").css({"color":borderColors[i]});
         $("#otherData").append(age);
+        if(data[i].faceAttributes.smile > 0){
+          $("#otherData").append('<img src="/img/icons/smile.png">');
+        }
+        if(data[i].faceAttributes.glasses != "NoGlasses"){
+          $("#otherData").append('<img src="/img/icons/glasses-1.png">');
+        }
+        if(data[i].faceAttributes.facialHair.beard > 0){
+          $("#otherData").append('<img src="/img/icons/beard.png">');
+        }
+        if(data[i].faceAttributes.facialHair.moustache > 0){
+          $("#otherData").append('<img src="/img/icons/moustache.png">');
+        }
+
+        //emotions data
           var newData = data[i].faceAttributes.emotion;
           dataSetData[i] = {
             label: labels[i],
@@ -48,6 +66,7 @@ function processImage() {
             pointBorderColor: "#fff",
             data: [newData.anger,newData.contempt, newData.disgust, newData.fear, newData.neutral, newData.happiness, newData.sadness, newData.surprise]
           };
+          //hair data
           var hairData = data[i].faceAttributes.hair.hairColor;
           if(hairData.length === 0){
             //do nothing
@@ -63,6 +82,7 @@ function processImage() {
             };
           }
         }
+        //emotions radar chart
         if(dataSetData.length === 0){
           $("#emotionChart").remove();
           $('<h5>Sorry, unable to recognize any emotions. <br><i class="fa fa-frown-o fa-2x" aria-hidden="true"></i></h5>').appendTo('#emotionError');
@@ -91,6 +111,7 @@ function processImage() {
               }
           });
         }
+        //hair radar chart
         if(hairDataSetData.length === 0){
           $("#hairChart").remove();
           $('<h5>Sorry, unable to recognize any hair in your image. <br><i class="fa fa-frown-o fa-2x" aria-hidden="true"></i></h5>').appendTo('#hairError');

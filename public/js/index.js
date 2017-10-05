@@ -1,6 +1,7 @@
 // loading screen
 $(document).ready(function(){
   $('#loading_wrap').remove();
+   $('[data-toggle="tooltip"]').tooltip(); 
 });
 
 //custom carousel animations on homepage
