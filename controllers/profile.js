@@ -38,13 +38,17 @@ router.post('/', upload.single('myFile'), function(req,res){
   });
 });
 
-router.get('/display', isLoggedIn, function(req, res){
-    res.render('display', {images, cloudinary});
+router.get('/display/:id', isLoggedIn, function(req, res){
+  var imageToRender = req.params.id;
+  db.cloudinary.findById(imageToRender).then(function(image){
+    var cloudId = image.src;
+    console.log(image.src);
+    res.render('display', {images, cloudId, cloudinary2});
+  });
 });
 
 router.delete('/:id', function(req, res) {
     var imageToDelete = req.params.id;
-    console.log(imageToDelete);
     db.cloudinary.destroy({
       where: {id: imageToDelete}
     }).then(function(){
