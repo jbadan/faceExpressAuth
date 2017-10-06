@@ -46,15 +46,20 @@ router.get('/display/:id', isLoggedIn, function(req, res){
   });
 });
 
-// router.post('/:id', function(req,res){
-//   var imageToFavorite = req.params.id;
-//   db.cloudinary.findById(imageToFavorite).then(function(image){
-//     image.createFavorite({
-//       isFavorite: true
-//     })
-//   })
-//   res.redirect('/profile/');
-// })
+router.post('/:id', function(req,res){
+  var imageToFavorite = req.params.id;
+  db.image.findById(imageToFavorite).then(function(image){
+    image.updateAttributes({
+      isFavorite: true
+    })
+  }).then(function(){
+    db.image.findAll({
+      where: {isFavorite: true}
+    }).then(function(favorites){
+      res.redirect('/profile');
+    })
+  })
+})
 
 router.delete('/:id', function(req, res) {
     var imageToDelete = req.params.id;

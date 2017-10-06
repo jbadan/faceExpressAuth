@@ -20,7 +20,11 @@
           <a href="/profile/display/<%=image.id%>"><img class="img-responsive try inputImage imageResizer" src="<%= imgUrl %>"></a>
           <form method="POST" action="/profile/<%=image.id%>">
             <input hidden type="text" name="name" value="<%= image.id %>">
+            <%if(image.isFavorite == true){%>
+            <button class="heart" type="submit"><i class="inputImageButton fa fa-heart fa-2x" aria-hidden="true"></i></button>
+            <%}else{%>
             <button class="heart" type="submit"><i class="inputImageButton fa fa-heart-o fa-2x" aria-hidden="true"></i></button>
+          <%}%>
         </form>
           <button type="submit" class="delete-link trash" href="/profile/<%=image.id%>"><i class="inputImageButton fa fa-trash-o fa-2x" aria-hidden="true"></i></button>
         </div>
