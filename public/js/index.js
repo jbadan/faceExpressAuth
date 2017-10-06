@@ -67,7 +67,7 @@ $('.delete-link').on('click', function(e) {
   window.location.reload();
 });
 //trash button animation on hover
-$('.trash').hover(
+$('.inputImageButton').hover(
   function(){
     $(this).addClass('animated pulse infinite')
   },

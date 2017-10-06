@@ -120,13 +120,21 @@ canvas{
   width: 270px;
 }
 .imageHolder button{
-  position: absolute;
-  top: 18px;
-  right: 18px;
   border:none;
   background: #F2C777;
   color: white;
+  position: absolute;
 }
+.trash{
+  top: 18px;
+  right: 18px;
+}
+.heart{
+  position: absolute;
+  top: 18px;
+  right: 48px;
+}
+
 
 #downArrow{
   margin-left: 40%;
@@ -155,9 +163,6 @@ canvas{
   margin-top: 20px;
 }
 
-/*.row{
-  padding:40px 0;
-}*/
 .navbar{
   background: white;
 }
