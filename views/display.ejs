@@ -2,7 +2,7 @@
 	<div class="jumbotron" id="jumbotron">
 		<h1 id="header">Check you out!</h1>
 		<% if(images.length === 0){ %>
-			<% var imgUrl = cloudinary2.url(cloudId); %>
+			<% var imgUrl = cloudinary.url(cloudId); %>
 			<img class="img-responsive col-lg-offset-3 inputImage" src="<%= imgUrl %>">
 		<% }else{ %>
 			<% images.forEach(function(image){ %>
@@ -17,7 +17,7 @@
 			<div class="col-md-12">
 				<div id="imageBox">
 					<% if(images.length === 0){ %>
-						<% var imgUrl = cloudinary2.url(cloudId); %>
+						<% var imgUrl = cloudinary.url(cloudId); %>
 						<img id="image" src="<%= imgUrl %>">
 					<% }else{ %>
 						<% images.forEach(function(image){ %>

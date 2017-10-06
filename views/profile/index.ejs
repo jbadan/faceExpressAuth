@@ -14,15 +14,15 @@
   </div>
   <div class=row>
     <div class="col-md-12">
-      <% user.cloudinaries.forEach(function(cloudinary){ %>
-      <% var imgUrl = cloudinary2.url(cloudinary.src); %>
+      <% user.images.forEach(function(image){ %>
+      <% var imgUrl = cloudinary.url(image.src); %>
         <div class="imageHolder">
-          <a href="/profile/display/<%=cloudinary.id%>"><img class="img-responsive try inputImage imageResizer" src="<%= imgUrl %>"></a>
-          <form method="POST" action="/profile/<%=cloudinary.id%>">
-            <input hidden type="text" name="name" value="<%= cloudinary.id %>">
+          <a href="/profile/display/<%=image.id%>"><img class="img-responsive try inputImage imageResizer" src="<%= imgUrl %>"></a>
+          <form method="POST" action="/profile/<%=image.id%>">
+            <input hidden type="text" name="name" value="<%= image.id %>">
             <button class="heart" type="submit"><i class="inputImageButton fa fa-heart-o fa-2x" aria-hidden="true"></i></button>
         </form>
-          <button type="submit" class="delete-link trash" href="/profile/<%=cloudinary.id%>"><i class="inputImageButton fa fa-trash-o fa-2x" aria-hidden="true"></i></button>
+          <button type="submit" class="delete-link trash" href="/profile/<%=image.id%>"><i class="inputImageButton fa fa-trash-o fa-2x" aria-hidden="true"></i></button>
         </div>
       <% }) %>
     </div>
