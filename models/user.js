@@ -43,6 +43,7 @@ module.exports = (sequelize, DataTypes) => {
     classMethods: {
       associate: function(models) {
         models.user.hasMany(models.cloudinary);
+        models.user.hasMany(models.image);
       }
      },
     instanceMethods: {

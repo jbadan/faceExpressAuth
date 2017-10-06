@@ -42,10 +42,19 @@ router.get('/display/:id', isLoggedIn, function(req, res){
   var imageToRender = req.params.id;
   db.cloudinary.findById(imageToRender).then(function(image){
     var cloudId = image.src;
-    console.log(image.src);
     res.render('display', {images, cloudId, cloudinary2});
   });
 });
+
+router.post('/:id', function(req,res){
+  var imageToFavorite = req.params.id;
+  db.cloudinary.findById(imageToFavorite).then(function(image){
+    image.createFavorite({
+      isFavorite: true
+    })
+  })
+  res.redirect('/profile/');
+})
 
 router.delete('/:id', function(req, res) {
     var imageToDelete = req.params.id;
