@@ -25,8 +25,10 @@ function processImage() {
         data: '{"url": ' + '"' + sourceImageUrl + '"}',
     })
     .done(function(data) {
+      //
       $('#jumbotron').toggle();
       $('.imageCharts').show();
+      //
       var labels = ["Face", "Face 2", "Face 3", "Face 4", "Face 5", "Face 6"];
       var backgroundColors = ["rgba(255,0,0,0.2)",'rgba(102,0,204,0.2)', "rgba(0,102,204,0.2)", "rgba(102,204,0,0.2)", "rgba(204,0,204,0.2)", "rgba(0,0,204,0.2)"];
       var borderColors = ["rgba(255,0,0,1)","rgba(102,0,204,1)", "rgba(0,102,204,1)", "rgba(102,204,0,1)", "rgba(204,0,204,1)", "rgba(0,0,204,0.2)"];

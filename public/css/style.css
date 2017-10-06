@@ -86,6 +86,9 @@ input[type=submit]:hover{
   background: white;
   color: #BF2A2A;
 }
+canvas{
+  margin-top: 50px;
+}
 .try{
   border: 8px double white;
   padding: 10px;
