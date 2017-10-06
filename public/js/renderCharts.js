@@ -28,8 +28,8 @@ function processImage() {
       $('#jumbotron').toggle();
       $('.imageCharts').show();
       var labels = ["Face", "Face 2", "Face 3", "Face 4", "Face 5", "Face 6"];
-      var backgroundColors = ["rgba(2,73,89,0.2)",'rgba(255,99,132,0.2)', "rgba(179,181,198,0.2)", "rgba(242,199,199,0.2)", "rgba(9,33,64,0.2)", "rgba(191,42,42,0.2)"];
-      var borderColors = ["rgba(2,73,89,1)","rgba(255,99,132,1)", "rgba(179,181,198,1)", "rgba(242,199,199,1)", "rgba(9,33,64,1)", "rgba(191,42,42,0.2)"];
+      var backgroundColors = ["rgba(255,0,0,0.2)",'rgba(102,0,204,0.2)', "rgba(0,102,204,0.2)", "rgba(102,204,0,0.2)", "rgba(204,0,204,0.2)", "rgba(0,0,204,0.2)"];
+      var borderColors = ["rgba(255,0,0,1)","rgba(102,0,204,1)", "rgba(0,102,204,1)", "rgba(102,204,0,1)", "rgba(204,0,204,1)", "rgba(0,0,204,0.2)"];
 
       for(i=0;i<data.length; i++){
         //face square
