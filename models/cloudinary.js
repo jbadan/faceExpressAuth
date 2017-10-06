@@ -7,6 +7,7 @@ module.exports = (sequelize, DataTypes) => {
     classMethods: {
       associate: function(models) {
         models.cloudinary.belongsTo(models.user);
+        models.cloudinary.hasMany(models.favorite);
       }
     }
   });
