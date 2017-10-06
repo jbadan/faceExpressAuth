@@ -46,7 +46,7 @@ router.get('/display/:id', isLoggedIn, function(req, res){
   });
 });
 
-router.post('/:id', function(req,res){
+router.post('/favorite/:id', function(req,res){
   var imageToFavorite = req.params.id;
   db.image.findById(imageToFavorite).then(function(image){
     image.updateAttributes({
@@ -55,6 +55,20 @@ router.post('/:id', function(req,res){
   }).then(function(){
     db.image.findAll({
       where: {isFavorite: true}
+    }).then(function(favorites){
+      res.redirect('/profile');
+    })
+  })
+})
+router.post('/unfavorite/:id', function(req,res){
+  var imageToUnfavorite = req.params.id;
+  db.image.findById(imageToUnfavorite).then(function(image){
+    image.updateAttributes({
+      isFavorite: false
+    })
+  }).then(function(){
+    db.image.findAll({
+      where: {isFavorite: false}
     }).then(function(favorites){
       res.redirect('/profile');
     })
