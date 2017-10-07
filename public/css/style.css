@@ -111,8 +111,8 @@ canvas{
 }
 
 .imageResizer{
-  height: 250px;
-  width: 250px;
+  height: 200px;
+  width: 200px;
 }
 .chart-container img{
   animation-delay: 1s;
@@ -126,8 +126,6 @@ canvas{
 .imageHolder{
   position:relative;
   display: inline-block;
-  height: 270px;
-  width: 270px;
 }
 .imageHolder button{
   border:none;
