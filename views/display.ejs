@@ -52,7 +52,11 @@
 	<div class="row imageCharts">
 		<div class="col-md-12 addMore">
 				<br>
-				<a href="/">Back</a>
+				<% if (currentUser) { %>
+					<a href="/profile">Back</a>
+				<% } else { %>
+					<a href="/">Back</a>
+				<% } %>
 		</div>
 	</div>
 </div>

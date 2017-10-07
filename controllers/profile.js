@@ -39,6 +39,7 @@ router.post('/', upload.single('myFile'), function(req,res){
 
 router.get('/display/:id', isLoggedIn, function(req, res){
   var imageToRender = req.params.id;
+  images = [];
   db.image.findById(imageToRender).then(function(image){
     var cloudId = image.src;
     res.render('display', {images, cloudId, cloudinary});
