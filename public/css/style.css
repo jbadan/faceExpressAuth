@@ -65,10 +65,12 @@ h2{
 h3{
   font-size: 2em;
 }
+#about{
+  padding-top: 40px;
+}
 p{
   color: white;
-  padding: 20px;
-  padding-top: 40px;
+  padding: 10px;
   letter-spacing: 2px;
 }
 input[type=file] {
@@ -78,9 +80,9 @@ input[type=file] {
 }
 input[type=submit]{
   background: none;
-  border: 1px solid #BF2A2A;
+  border: 1px solid white;
   margin: 5px;
-  color: #BF2A2A;
+  color: white;
 }
 input[type=submit]:hover{
   background: white;
@@ -95,11 +97,19 @@ canvas{
   margin: 2px;
   text-align: center;
 }
+
+.tryPink{
+  border: 8px double #F24738;
+  padding: 10px;
+  margin: 2px;
+  text-align: center;
+}
 .inputImage {
     margin: auto;
     display: inline-block;
     margin: 10px;
 }
+
 .imageResizer{
   height: 250px;
   width: 250px;
@@ -148,6 +158,11 @@ canvas{
   vertical-align: bottom;
 }
 
+#headerDisplay{
+  display: block;
+
+}
+
 #myCarousel{
   border-radius: 5px;
   margin: 20px;
@@ -158,8 +173,13 @@ canvas{
   -webkit-animation-delay: 8s;
   -webkit-animation-iteration-count: 1;
 }
-#exampleRow{
-  background: #F2C777;
+.exampleRow{
+  background: white;
+  margin-top: 20px;
+}
+
+.exampleRowPink{
+  background:#F24738;
   margin-top: 20px;
 }
 
@@ -179,6 +199,9 @@ canvas{
 }
 .imageCharts{
   align-items: center;
+}
+.imageBorder{
+  border: 8px double #F24738;
 }
 
 h5{
@@ -211,19 +234,25 @@ h5{
   padding: 100px 0;
 }
 .carousel{
-  background: #F2C777;
+  background: white;
+  max-width: 700px;
 }
 .carousel-control.left, .carousel-control.right {
-    background-image: none
+    background-image: none;
 }
 
 .carousel-indicators li {
     background: #F2C777;
 }
 .carousel-indicators .active {
-    background: #666;
+    background: #F2C777;
 }
 
+
+.chart-container{
+  margin: 0 auto;
+  text-align: center
+}
 .center{
   text-align: center;
 }

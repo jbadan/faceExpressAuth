@@ -4,7 +4,6 @@ var isLoggedIn = require("../middleware/isLoggedIn");
 var passport = require('../config/ppConfig');
 var multer = require('multer');
 var cloudinary = require('cloudinary');
-// var cloudinary2 = require('cloudinary');
 var upload = multer({dest: './uploads/'});
 var router = express.Router();
 
@@ -53,13 +52,10 @@ router.post('/favorite/:id', function(req,res){
       isFavorite: true
     })
   }).then(function(){
-    db.image.findAll({
-      where: {isFavorite: true}
-    }).then(function(favorites){
       res.redirect('/profile');
-    })
-  })
-})
+    });
+  });
+
 router.post('/unfavorite/:id', function(req,res){
   var imageToUnfavorite = req.params.id;
   db.image.findById(imageToUnfavorite).then(function(image){
@@ -67,13 +63,9 @@ router.post('/unfavorite/:id', function(req,res){
       isFavorite: false
     })
   }).then(function(){
-    db.image.findAll({
-      where: {isFavorite: false}
-    }).then(function(favorites){
       res.redirect('/profile');
-    })
-  })
-})
+  });
+});
 
 router.delete('/:id', function(req, res) {
     var imageToDelete = req.params.id;

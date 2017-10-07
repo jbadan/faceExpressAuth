@@ -1,6 +1,6 @@
 <div class="container" id="display">
 	<div class="jumbotron" id="jumbotron">
-		<h1 id="header">Check you out!</h1>
+		<h1 id="headerDisplay">Check you out!</h1>
 		<% if(images.length === 0){ %>
 			<% var imgUrl = cloudinary.url(cloudId); %>
 			<img class="img-responsive col-lg-offset-3 inputImage" src="<%= imgUrl %>">
