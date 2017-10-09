@@ -37,6 +37,9 @@ router.post('/', upload.single('myFile'), function(req,res){
         });
 	    });
     res.render('display', {images, cloudinary});
+  })
+  .catch(function(error){
+    res.render('error');
   });
 });
 

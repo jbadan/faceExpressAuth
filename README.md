@@ -59,3 +59,5 @@ DELETE | /profile/:id | Receives an id, deletes image from image database that m
 # Next Steps
 * Fix sorting on profile page to display "favorited" images first
 * Move API call to backend as request
+* Reduce unnecessary code - CSS is not dry
+* Find better way to toggle favorited pictures instead of using 2 post routes 

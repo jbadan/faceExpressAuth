@@ -54,10 +54,32 @@ app.post('/', upload.single('myFile'), function(req,res){
   });
 });
 
+app.get('/error', function(req,res){
+  res.render('error');
+})
+
+if (app.get('env') === 'development') {
+
+  app.use(function(err, req, res, next) {
+    res.status(err.status || 500);
+    res.render('error');
+  });
+
+}
+
+app.use(function(err, req, res, next) {
+    res.status(err.status || 500);
+    res.render('error');
+});
 
 
 app.use('/auth', require('./controllers/auth'));
 app.use('/profile', require('./controllers/profile'));
+app.use(redirectUnmatched);
+
+function redirectUnmatched(req, res) {
+  res.render("error");
+}
 
 
 var server = app.listen(process.env.PORT || 3000);
