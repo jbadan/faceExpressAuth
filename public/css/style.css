@@ -177,7 +177,7 @@ canvas{
   -webkit-animation-iteration-count: 1;
 }
 .paddingBottom{
-  padding-bottom: 80px;
+  padding-bottom: 100px;
 }
 .exampleRow{
   background: white;
@@ -212,7 +212,11 @@ canvas{
   background:#F24738;
   text-align: center;
 }
-#howItWorks, .pink{
+#howItWorks{
+  background:#F24738;
+  padding: 60px 10px;
+}
+.pink{
   background:#F24738;
 }
 #howItWorks a{
@@ -297,10 +301,10 @@ h5{
 }
 
 .carousel-indicators li {
-    background: #F2C777;
+    background: #F24738;
 }
 .carousel-indicators .active {
-    background: #F2C777;
+    background: #F24738;
 }
 
 
