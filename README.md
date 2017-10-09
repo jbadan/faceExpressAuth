@@ -60,4 +60,5 @@ DELETE | /profile/:id | Receives an id, deletes image from image database that m
 * Fix sorting on profile page to display "favorited" images first
 * Move API call to backend as request
 * Reduce unnecessary code - CSS is not dry
-* Find better way to toggle favorited pictures instead of using 2 post routes 
+* Find better way to toggle favorited pictures instead of using 2 post routes
+* Replace image upload with [Cloudinary upload widget](https://cloudinary.com/documentation/upload_widget)

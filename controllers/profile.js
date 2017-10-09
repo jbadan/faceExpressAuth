@@ -9,6 +9,12 @@ var router = express.Router();
 
 var images = [];
 
+router.use(function(err, req, res, next) {
+    res.status(err.status || 500);
+    res.render('error');
+});
+
+
 router.get('/', isLoggedIn, function(req, res){
     db.user.find({
       where: {id: req.user.id},
@@ -27,20 +33,17 @@ router.get('/', isLoggedIn, function(req, res){
 });
 
 router.post('/', upload.single('myFile'), function(req,res){
-	cloudinary.v2.uploader.upload(req.file.path,{ width: 350, height: 350, crop: "limit" },function(error, result){
-    images = [];
-		images.push(result.public_id);
-		  db.user.findById(req.user.id).then(function(user) {
-        user.createImage({
-          src: result.public_id
-        }).then(function(){
-        });
-	    });
-    res.render('display', {images, cloudinary});
+  	cloudinary.v2.uploader.upload(req.file.path,{ width: 350, height: 350, crop: "limit" },function(error, result){
+      images = [];
+  		images.push(result.public_id);
+  		  db.user.findById(req.user.id).then(function(user) {
+          user.createImage({
+            src: result.public_id
+          }).then(function(){
+          });
+  	    });
+      res.render('display', {images, cloudinary});
   })
-  .catch(function(error){
-    res.render('error');
-  });
 });
 
 router.get('/display/:id', isLoggedIn, function(req, res){
