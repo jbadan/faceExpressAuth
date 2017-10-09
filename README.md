@@ -19,6 +19,9 @@
 
 # Trello board
 
+![Page 1](/public/img/trello/trello1.png)
+![Page 2](/public/img/trello/trello2.png)
+
 # Routes
 METHOD | URL | Purpose
 --- | --- | ---
@@ -36,7 +39,7 @@ POST | /profile/favorite/:id | Receives id, updates image database to change col
 POST | /profile/unfavorite/:id | Receives id, updates image database to change column “isFavorited” to false on received id, on complete, renders profile page (‘profile/index’) with empty heart icon for image with received id
 DELETE | /profile/:id | Receives an id, deletes image from image database that matched said id, redirects to profile page (‘profile/index’)
 
-#Issues
+# Issues
 * Unable to call Microsoft Face API from backend without key being blocked.
 
 # Next Steps
