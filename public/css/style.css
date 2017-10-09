@@ -91,6 +91,9 @@ input[type=submit]:hover{
 canvas{
   margin-top: 50px;
 }
+.charts{
+  margin-top: -10px;
+}
 .try{
   border: 8px double white;
   padding: 10px;
@@ -171,14 +174,31 @@ canvas{
   -webkit-animation-delay: 8s;
   -webkit-animation-iteration-count: 1;
 }
+.paddingBottom{
+  padding-bottom: 80px;
+}
 .exampleRow{
   background: white;
-  margin-top: 20px;
+  text-align: center;
+}
+.exampleRow  h4{
+  font-family: 'Montserrat';
+  color: #F24738;
+  font-size: 1.5em;
+  padding: 20px;
+  line-height: 30px;
 }
 
 .exampleRowPink{
   background:#F24738;
-  margin-top: 20px;
+    text-align: center;
+}
+.exampleRowPink h4{
+  font-family: 'Montserrat';
+  color: white;
+  font-size: 1.5em;
+  padding: 20px;
+  line-height: 30px;
 }
 
 .navbar{
@@ -201,10 +221,13 @@ canvas{
 .imageBorder{
   border: 8px double #F24738;
 }
-
+.paddingExtra{
+  padding: 100px 0;
+}
 h5{
   font-size: 3em;
 }
+
 
 .displayBox{
   text-align: center;
@@ -229,7 +252,8 @@ h5{
 }
 
 .padding{
-  padding: 100px 0;
+  padding-top: 50px;
+  padding-bottom: 20px;
 }
 .carousel{
   background: white;

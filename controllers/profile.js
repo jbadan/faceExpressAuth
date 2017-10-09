@@ -10,10 +10,13 @@ var router = express.Router();
 var images = [];
 
 router.get('/', isLoggedIn, function(req, res){
-  db.user.find({
-    where: {id: req.user.id},
-    include: [db.image]
-  })
+    db.user.find({
+      where: {id: req.user.id},
+      include: [{
+        model:db.image,
+        order:'"isFavorite" DESC'
+      }]
+    })
   .then(function(user){
     if(!user) throw Error();
     res.render('profile/index', {user: user, cloudinary});
