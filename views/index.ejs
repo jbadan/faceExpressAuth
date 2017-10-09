@@ -31,34 +31,42 @@
 	</div>
 	<div class="row text-center exampleRow">
 		<div class="col-md-3">
-			<div class="icon">
-				<i class="fa fa-users fa-3x" aria-hidden="true"></i>
+			<div class="icons">
+				<i class="fa fa-users fa-4x" aria-hidden="true"></i>
 			</div>
 			<h4>Demographics</h4>
-			<p></p>
+			<p>Displays perceived age and gender.</p>
 		</div>
-		<div class="col-md-3">
-			<div class="icon">
-				<i class="fa fa-smile-o fa-3x" aria-hidden="true"></i>
+		<div class="col-md-3 text-center">
+			<div class="icons">
+				<i class="fa fa-smile-o fa-4x" aria-hidden="true"></i>
 			</div>
 			<h4>Emotions</h4>
-			<p></p>
+			<p>Visualizes machine learning-based predictions of displayed emotions.</p>
 		</div>
-		<div class="col-md-3">
-			<img>
+		<div class="col-md-3 text-center">
+			<div class="icons">
+				<img src="/img/color.png">
+			</div>
 			<h4>Hair Color</h4>
-			<p></p>
+			<p>Presents predictions of hair color.</p>
 		</div>
-		<div class="col-md-3">
-			<img>
+		<div class="col-md-3 text-center">
+			<div class="icons">
+				<img src="/img/moustache.png">
+			</div>
 			<h4>Icons</h4>
-			<p></p>
+			<p>Displays icons to represent smiling, glasses and facial hair.</p>
 		</div>
 	</div>
-	<div class="row text-center exampleRowPink">
+	<div class="row" id="howItWorks">
 		<div class="col-md-12">
 			<h4>How it works</h4>
-			<p></p>
+			<p>Theia uses the <a href="https://azure.microsoft.com/en-us/services/cognitive-services/face/Microsoft">Microsoft Face API</a> to detect one or more human faces in an image.
+				It provides the coordinates of the face, along with face attributes which contain machine learning-based predictions of facial features.
+				Microsoft uses the <a href="https://en.wikipedia.org/wiki/Viola%E2%80%93Jones_object_detection_framework">Viola-Jones object detection framework</a>.
+				Theia displays information received from the Microsoft Face API using user-friendly, interactive charts and other data visualization techniques.
+			</p>
 		</div>
 	</div>
 	<!-- woman eating salad example -->
