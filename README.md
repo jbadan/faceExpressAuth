@@ -3,13 +3,17 @@
 
 # Demo
 
+## Homepage
 ![Home 1](/public/img/demo/1.png)
 ![Home 2](/public/img/demo/2.png)
 ![Home 3](/public/img/demo/3.png)
 ![Home 4](/public/img/demo/4.png)
 ![Home 5](/public/img/demo/5.png)
 
+## Profile
 ![Profile](/public/img/demo/6.png)
+
+## Chart Display
 ![Check you out](/public/img/demo/7.png)
 ![Chart display](/public/img/demo/8.png)
 
