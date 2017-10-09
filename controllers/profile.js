@@ -9,12 +9,6 @@ var router = express.Router();
 
 var images = [];
 
-router.use(function(err, req, res, next) {
-    res.status(err.status || 500);
-    res.render('error');
-});
-
-
 router.get('/', isLoggedIn, function(req, res){
     db.user.find({
       where: {id: req.user.id},
