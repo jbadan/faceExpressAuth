@@ -114,6 +114,9 @@ canvas{
     display: inline-block;
     margin: 10px;
 }
+.formLog{
+  max-width: 600px;
+}
 
 .imageResizer{
   height: 200px;
