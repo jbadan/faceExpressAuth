@@ -17,7 +17,7 @@
 * [SpinKit](http://tobiasahlin.com/spinkit/)
 * [FontAwesome](http://fontawesome.io/)
 
-# Trello board
+# Planning
 
 ![Page 1](/public/img/trello/trello1.png)
 ![Page 2](/public/img/trello/trello2.png)
