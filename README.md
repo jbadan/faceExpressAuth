@@ -3,6 +3,16 @@
 
 # Demo
 
+![Home 1](/public/img/demo/1.png)
+![Home 2](/public/img/demo/2.png)
+![Home 3](/public/img/demo/3.png)
+![Home 4](/public/img/demo/4.png)
+![Home 5](/public/img/demo/5.png)
+
+![Profile](/public/img/demo/6.png)
+![Check you out](/public/img/demo/7.png)
+![Chart display](/public/img/demo/8.png)
+
 # Technologies Used
 * Express/Node
 * [Microsoft Azure Face API](https://azure.microsoft.com/en-us/services/cognitive-services/face/)
