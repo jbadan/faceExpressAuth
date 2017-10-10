@@ -9,6 +9,11 @@
     font-family: 'Cardo';
     src: url(../img/Cardo-Regular.ttf);
 }
+
+@font-face{
+  font-family: 'Cardo-bold';
+  src: url(../img/Cardo-Bold.tff);
+}
 /*Loading spinner*/
 #loading_wrap{
   position:fixed;
