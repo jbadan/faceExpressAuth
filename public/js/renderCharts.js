@@ -3,7 +3,7 @@ var dataSetData = [];
 var hairDataSetData = [];
 
 function processImage() {
-    var subscriptionKey = '777602b32d52468babf62398a5630de4';
+    var subscriptionKey = 'ab957f71d79740ddb451c966aab58aca';
     var uriBase = "https://westcentralus.api.cognitive.microsoft.com/face/v1.0/detect";
     // Request parameters.
     var params = {

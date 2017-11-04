@@ -63,10 +63,11 @@ $('.delete-link').on('click', function(e) {
     method: 'DELETE',
     url: deleteUrl
   }).done(function(data) {
+
   });
   window.location.reload();
 });
-//trash button animation on hover
+//trash/heart button animation on hover
 $('.inputImageButton').hover(
   function(){
     $(this).addClass('animated pulse infinite')
